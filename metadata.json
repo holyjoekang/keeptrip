@@ -1,0 +1,6 @@
+{
+  "name": "KeepTrip",
+  "description": "Every trip, kept. 다녀온 길까지, 간직하다. 설치 없이 링크로 여는 나만의 여행 동반자 KeepTrip",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
