@@ -5,6 +5,8 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // GitHub Pages(holyjoekang.github.io/keeptrip/)에서는 VITE_BASE=/keeptrip/ 로 빌드한다 (.github/workflows/pages.yml)
+    base: process.env.VITE_BASE || '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
