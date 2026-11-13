@@ -13,7 +13,7 @@ export const StoryScreen: React.FC<StoryScreenProps> = ({ trip, voiceNotes }) =>
   const [playingVoiceId, setPlayingVoiceId] = useState<string | null>(null);
 
   // Recommendations matching Page 6 of PDF
-  const recommendations = trip.destinationType === 'CN'
+  const presetRecommendations = trip.destinationType === 'CN'
     ? [
         {
           name: '수정방 박물관',
@@ -42,6 +42,14 @@ export const StoryScreen: React.FC<StoryScreenProps> = ({ trip, voiceNotes }) =>
           category: '현지식/노포'
         }
       ];
+  // 기본 2개 여행 외 일정은 일정 속 장소에서 추천을 만든다 (강추 표시 우선)
+  const recommendations = trip.destinationType === 'CN' || trip.destinationType === 'MY'
+    ? presetRecommendations
+    : trip.days.flatMap((day) => day.stops)
+        .filter((stop) => stop.category !== 'transit' && stop.category !== 'flight' && stop.category !== 'hotel')
+        .sort((a, b) => Number(!!b.isRecommended) - Number(!!a.isRecommended))
+        .slice(0, 2)
+        .map((stop) => ({ name: stop.title, quote: stop.description || trip.subtitle, badge: '추천', category: stop.category === 'food' ? '식사/나눔' : '방문지' }));
 
   const daysCount = trip.days.length;
   let totalPlacesCount = 0;
@@ -166,14 +174,14 @@ ${window.location.href}`;
 
           <div className="space-y-2 mt-2">
             <div className="text-xs sm:text-sm font-bold text-slate-300">
-              {trip.dateRange} ({trip.durationText}) · {trip.destinationType === 'CN' ? '충칭 · 청두' : '쿠알라룸푸르 · 페낭'} · {trip.partyText}
+              {trip.dateRange} ({trip.durationText}) · {trip.destinationType === 'CN' ? '충칭 · 청두' : trip.destinationType === 'MY' ? '쿠알라룸푸르 · 페낭' : trip.days[0]?.city} · {trip.partyText}
             </div>
 
             <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
-              {trip.destinationType === 'CN' ? '네 친구의 백주 여행' : '부부의 말레이시아 힐링 여행'}
+              {trip.destinationType === 'CN' ? '네 친구의 백주 여행' : trip.destinationType === 'MY' ? '부부의 말레이시아 힐링 여행' : trip.title}
               <br />
               <span className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#EFA03D]">
-                {trip.destinationType === 'CN' ? '불맛과 수정방 사이' : '차이나타운과 페낭 바다 사이'}
+                {trip.destinationType === 'CN' ? '불맛과 수정방 사이' : trip.destinationType === 'MY' ? '차이나타운과 페낭 바다 사이' : trip.subtitle}
               </span>
             </h1>
           </div>

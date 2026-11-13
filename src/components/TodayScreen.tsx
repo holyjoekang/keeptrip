@@ -20,8 +20,8 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
   onOpenAdvisor,
   onGoToVoiceRecord
 }) => {
-  const defaultDayIndex = trip.destinationType === 'CN' ? 2 : 1;
-  const [dayIndex, setDayIndex] = useState<number>(defaultDayIndex);
+  const defaultDayIndex = trip.destinationType === 'CN' ? 2 : trip.destinationType === 'MY' ? 1 : 0;
+  const [dayIndex, setDayIndex] = useState<number>(Math.min(defaultDayIndex, trip.days.length - 1));
   const activeDay = trip.days[dayIndex] || trip.days[0];
 
   const featuredStop = activeDay.stops.find((s) => s.docent) || activeDay.stops[2] || activeDay.stops[0];
@@ -125,7 +125,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
               <div className="relative z-10">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-semibold text-slate-300">
-                    다음 일정 · {featuredStop.time || '14:30'}
+                    다음 일정{featuredStop.time && featuredStop.time !== '-' ? ` · ${featuredStop.time}` : ''}
                   </span>
                   <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-white/15 text-slate-200">
                     터치하여 해설 보기
@@ -145,12 +145,12 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
                           : featuredStop.title.includes('리지바')
                           ? '李子坝轻轨站'
                           : '水井坊博物馆')
-                      : 'Ah Soon Kor Hokkien Mee'}
+                      : trip.destinationType === 'MY' ? 'Ah Soon Kor Hokkien Mee' : featuredStop.description}
                   </div>
                 </div>
 
                 <p className="text-xs text-slate-300 mt-3 leading-relaxed">
-                  호텔에서 택시 약 25분 · 도착하면 해설이 자동으로 열려요
+                  {trip.destinationType === 'CN' || trip.destinationType === 'MY' ? '호텔에서 택시 약 25분 · 도착하면 해설이 자동으로 열려요' : `${activeDay.theme} · 도착하면 해설이 자동으로 열려요`}
                 </p>
 
                 {/* 2 Action Buttons */}
@@ -195,7 +195,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
                   <p className="text-xs text-[#78350F] mt-1 leading-relaxed">
                     {trip.destinationType === 'CN'
                       ? '수정방 투어·시음 예약 확인 · 여권 지참 (박물관 입장 시 필요할 수 있음)'
-                      : '페낭 호커센터용 현금 잔돈(20링깃) 지참 · 3핀 플러그 어댑터 챙기기'}
+                      : trip.destinationType === 'MY' ? '페낭 호커센터용 현금 잔돈(20링깃) 지참 · 3핀 플러그 어댑터 챙기기' : (trip.checklist.find((c) => c.tier === 'MUST')?.title || trip.keyRules[0]?.title)}
                   </p>
                 </div>
               </div>

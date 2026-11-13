@@ -167,6 +167,7 @@ export const CustomTripModal: React.FC<CustomTripModalProps> = ({
                 <option value="CN">중국 (알리페이 200위안 룰/eSIM)</option>
                 <option value="MY">말레이시아 (그랩 3% 절약/MDAC)</option>
                 <option value="JP">일본 (트래블카드/스이카)</option>
+                <option value="KR">국내 (단체 순례 · 체험학습)</option>
                 <option value="GLOBAL">기타 해외 여행지</option>
               </select>
             </div>

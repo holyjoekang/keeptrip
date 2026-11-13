@@ -164,6 +164,7 @@ export default function App() {
         {/* Screen 1: 오늘 (Today) */}
         {activeTab === 'today' && (
           <TodayScreen
+            key={activeTrip.id}
             trip={activeTrip}
             onOpenDocent={(stop) => setActiveDocentSpot(stop)}
             onOpenTaxiAddress={(stop) => setActiveTaxiSpot(stop)}
