@@ -1,6 +1,7 @@
 import { TripData } from '../types/travel';
+import { PROPOSAL_TRIPS } from './proposalTrips';
 
-export const PRESET_TRIPS: TripData[] = [
+const BASE_TRIPS: TripData[] = [
   {
     id: 'trip-china-2026',
     title: '중국 서부 미식·백주·문화 탐방',
@@ -655,3 +656,6 @@ export const PRESET_TRIPS: TripData[] = [
     ]
   }
 ];
+
+/** 기본 여행 2건 + Keep121 맞춤 제안 일정 (src/data/proposalTrips.ts) */
+export const PRESET_TRIPS: TripData[] = [...BASE_TRIPS, ...PROPOSAL_TRIPS];

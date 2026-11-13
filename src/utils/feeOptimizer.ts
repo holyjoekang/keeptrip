@@ -1,3 +1,4 @@
+import { DestinationType } from '../types/travel';
 export interface PaymentMethodOption {
   id: string;
   name: string;
@@ -32,7 +33,7 @@ export interface OptimizationResult {
  * Calculates payment fees for a given destination and spending amount
  */
 export function calculatePaymentOptimization(
-  destinationCode: 'CN' | 'MY' | 'JP' | 'VN' | 'GLOBAL',
+  destinationCode: DestinationType,
   budgetKrw: number,
   averageSingleTxKrw: number = 30000
 ): OptimizationResult {
@@ -165,6 +166,22 @@ export function calculatePaymentOptimization(
       recommendationDecision: decision,
       recommendationSummary: summary,
       keyActionTip: '그랩 등록 시 국내 일반 카드는 3% 수수료가 붙습니다. 트래블카드나 토스카드로 그랩 지갑에 50~100링깃씩 충전해 사용하고, 페낭 호커센터/야시장은 현금만 받으므로 10~20만원 정도는 현금 환전하세요.'
+    };
+  }
+
+  if (destinationCode === 'KR') {
+    // 국내 일정: 해외결제 수수료 없음
+    return {
+      estimatedSpendKrw: budgetKrw,
+      destination: '국내 (단체 순례 · 체험학습)',
+      comparison: [
+        { methodId: 'domestic_card', methodName: '평소 쓰는 카드 · 간편결제', totalFeeKrw: 0, finalCostKrw: budgetKrw, badge: '수수료 없음' }
+      ],
+      bestMethod: '평소 쓰는 카드 · 간편결제',
+      maxSavingsKrw: 0,
+      recommendationDecision: 'KEEP_EXISTING',
+      recommendationSummary: '국내 일정이라 해외결제 수수료가 없습니다. 평소 쓰는 카드를 그대로 쓰세요.',
+      keyActionTip: '단체 식사 · 입장료는 대부분 참가비에 포함됩니다. 개인 간식비 정도만 준비하세요.'
     };
   }
 

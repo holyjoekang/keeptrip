@@ -1,4 +1,4 @@
-export type DestinationType = 'CN' | 'MY' | 'JP' | 'VN' | 'GLOBAL';
+export type DestinationType = 'CN' | 'MY' | 'JP' | 'VN' | 'KR' | 'GLOBAL';
 
 export interface DocentInfo {
   spotName: string;
