@@ -1,7 +1,7 @@
 import React from 'react';
 import { Clock, CheckSquare, MessageSquare, BookOpen, Mic } from 'lucide-react';
 
-export type KeepTripTab = 'today' | 'prep' | 'record' | 'story';
+export type KeepTripTab = 'overview' | 'today' | 'prep' | 'record' | 'story';
 
 interface BottomNavProps {
   activeTab: KeepTripTab;
