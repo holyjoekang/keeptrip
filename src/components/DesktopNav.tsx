@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, CheckSquare, MessageSquare, BookOpen, Mic, Sparkles, Plus, ChevronDown } from 'lucide-react';
+import { Info, Clock, CheckSquare, MessageSquare, BookOpen, Mic, Sparkles, Plus, ChevronDown } from 'lucide-react';
 import { KeepTripLogo } from './KeepTripLogo';
 import { KeepTripTab } from './BottomNav';
 import { TripData } from '../types/travel';
@@ -11,6 +11,7 @@ interface DesktopNavProps {
   onOpenAdvisor: () => void;
   onOpenCustomModal: () => void;
   onOpenMenu: () => void;
+  onGoHome: () => void;
   currentTrip: TripData;
 }
 
@@ -21,6 +22,7 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({
   onOpenAdvisor,
   onOpenCustomModal,
   onOpenMenu,
+  onGoHome,
   currentTrip
 }) => {
   return (
@@ -29,7 +31,9 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({
         <div className="flex items-center justify-between h-16 lg:h-18 gap-2">
           {/* Left: Brand Logo & Current Trip Switcher */}
           <div className="flex items-center gap-2.5 lg:gap-4 shrink-0">
-            <KeepTripLogo size="md" />
+            <button onClick={onGoHome} aria-label="전체 일정 홈" title="전체 일정 홈">
+              <KeepTripLogo size="md" />
+            </button>
 
             <div className="h-5 lg:h-6 w-px bg-slate-200" />
 
@@ -47,6 +51,17 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({
 
           {/* Center: 4 Experience Tabs */}
           <nav className="flex items-center gap-1 bg-slate-100 p-1 lg:p-1.5 rounded-2xl border border-slate-200/80 shrink-0">
+            <button
+              onClick={() => onTabChange('overview')}
+              className={`px-2.5 lg:px-4 py-1.5 lg:py-2 rounded-xl text-xs font-extrabold flex items-center gap-1.5 lg:gap-2 transition-all whitespace-nowrap ${
+                activeTab === 'overview'
+                  ? 'bg-[#1E2856] text-white shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+              }`}
+            >
+              <Info className="w-3.5 h-3.5 lg:w-4 lg:h-4 stroke-[2.5]" />
+              <span>개요</span>
+            </button>
             <button
               onClick={() => onTabChange('today')}
               className={`px-2.5 lg:px-4 py-1.5 lg:py-2 rounded-xl text-xs font-extrabold flex items-center gap-1.5 lg:gap-2 transition-all whitespace-nowrap ${

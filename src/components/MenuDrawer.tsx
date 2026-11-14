@@ -11,6 +11,7 @@ interface MenuDrawerProps {
   onSelectTrip: (id: string) => void;
   onOpenCustomModal: () => void;
   onOpenAdvisor: () => void;
+  onGoHome?: () => void;
 }
 
 export const MenuDrawer: React.FC<MenuDrawerProps> = ({
@@ -20,7 +21,8 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
   selectedTripId,
   onSelectTrip,
   onOpenCustomModal,
-  onOpenAdvisor
+  onOpenAdvisor,
+  onGoHome
 }) => {
   if (!isOpen) return null;
 
@@ -30,7 +32,9 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
         <div className="space-y-6">
           {/* Header */}
           <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-            <KeepTripLogo size="md" />
+            <button onClick={() => { onClose(); onGoHome?.(); }} aria-label="전체 일정 홈">
+              <KeepTripLogo size="md" />
+            </button>
             <button
               onClick={onClose}
               className="p-1.5 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100"

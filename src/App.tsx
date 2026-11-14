@@ -12,6 +12,8 @@ import { TaxiAddressModal } from './components/TaxiAddressModal';
 import { MenuDrawer } from './components/MenuDrawer';
 import { AiAdvisorModal } from './components/AiAdvisorModal';
 import { CustomTripModal } from './components/CustomTripModal';
+import { TripHome } from './components/TripHome';
+import { TripOverview } from './components/TripOverview';
 
 export default function App() {
   const [trips, setTrips] = useState<TripData[]>(() => {
@@ -38,8 +40,45 @@ export default function App() {
     return PRESET_TRIPS;
   });
 
-  const [selectedTripId, setSelectedTripId] = useState<string>('trip-china-2026');
-  const [activeTab, setActiveTab] = useState<KeepTripTab>('today');
+  // 해시 라우팅: #trip=<id> 이면 일정 화면, 없으면 첫 화면(일정 선택)
+  const readHashTrip = () => {
+    const m = window.location.hash.match(/trip=([^&]+)/);
+    return m ? decodeURIComponent(m[1]) : null;
+  };
+  const [selectedTripId, setSelectedTripId] = useState<string>(
+    () => readHashTrip() || localStorage.getItem('my_travel_last_trip') || 'trip-china-2026'
+  );
+  const [view, setView] = useState<'home' | 'trip'>(() => (readHashTrip() ? 'trip' : 'home'));
+  const [activeTab, setActiveTab] = useState<KeepTripTab>('overview');
+
+  useEffect(() => {
+    const onHash = () => {
+      const id = readHashTrip();
+      if (id) {
+        setSelectedTripId(id);
+        setView('trip');
+      } else {
+        setView('home');
+      }
+    };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
+
+  const enterTrip = (id: string) => {
+    setSelectedTripId(id);
+    setActiveTab('overview');
+    setView('trip');
+    localStorage.setItem('my_travel_last_trip', id);
+    if (readHashTrip() !== id) window.location.hash = `trip=${encodeURIComponent(id)}`;
+    window.scrollTo(0, 0);
+  };
+
+  const goHome = () => {
+    setView('home');
+    if (window.location.hash) history.pushState(null, '', window.location.pathname + window.location.search);
+    window.scrollTo(0, 0);
+  };
 
   // Modals state
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -132,8 +171,7 @@ export default function App() {
       ...prev,
       [newTrip.id]: newTrip.initialVoiceNotes || []
     }));
-    setSelectedTripId(newTrip.id);
-    setActiveTab('today');
+    enterTrip(newTrip.id);
   };
 
   const handleQuickRecord = () => {
@@ -146,6 +184,24 @@ export default function App() {
     setActiveTab('record');
   };
 
+  if (view === 'home') {
+    return (
+      <div className="min-h-screen bg-[#F4F6F8]">
+        <TripHome
+          trips={trips}
+          lastTripId={localStorage.getItem('my_travel_last_trip') || undefined}
+          onEnterTrip={enterTrip}
+          onOpenCustomModal={() => setIsCustomModalOpen(true)}
+        />
+        <CustomTripModal
+          isOpen={isCustomModalOpen}
+          onClose={() => setIsCustomModalOpen(false)}
+          onAddTrip={handleAddTrip}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#F4F6F8] flex flex-col selection:bg-[#EFA03D]/20 selection:text-[#1E2856]">
       {/* Desktop & Tablet Top Navigation */}
@@ -156,11 +212,23 @@ export default function App() {
         onOpenAdvisor={() => setIsAdvisorOpen(true)}
         onOpenCustomModal={() => setIsCustomModalOpen(true)}
         onOpenMenu={() => setIsMenuOpen(true)}
+        onGoHome={goHome}
         currentTrip={activeTrip}
       />
 
       {/* Main Responsive App Content Area */}
       <div className="keeptrip-container flex-1 w-full relative flex flex-col">
+        {/* Screen 0: 첫 안내 · 일정 개요 */}
+        {activeTab === 'overview' && (
+          <TripOverview
+            key={activeTrip.id}
+            trip={activeTrip}
+            onGoHome={goHome}
+            onStartToday={() => setActiveTab('today')}
+            onOpenPrep={() => setActiveTab('prep')}
+          />
+        )}
+
         {/* Screen 1: 오늘 (Today) */}
         {activeTab === 'today' && (
           <TodayScreen
@@ -230,7 +298,8 @@ export default function App() {
           trips={trips}
           selectedTripId={selectedTripId}
           onClose={() => setIsMenuOpen(false)}
-          onSelectTrip={(id) => setSelectedTripId(id)}
+          onSelectTrip={enterTrip}
+          onGoHome={goHome}
           onOpenCustomModal={() => setIsCustomModalOpen(true)}
           onOpenAdvisor={() => setIsAdvisorOpen(true)}
         />
