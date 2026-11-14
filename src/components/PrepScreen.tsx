@@ -39,7 +39,7 @@ export const PrepScreen: React.FC<PrepScreenProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/60 pb-3">
         <div>
           <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-            {trip.destinationType === 'CN' ? '충칭·청두 4박 5일 · 출발 D-24' : trip.destinationType === 'MY' ? '쿠알라룸푸르·페낭 7박 8일 · 출발 D-18' : `${trip.title} · ${trip.durationText}`}
+            {`${trip.title} · ${trip.durationText}`}
           </div>
           <h1 className="text-2xl lg:text-3xl font-black text-[#111827] tracking-tight mt-0.5">
             나에게 맞춘 준비 & 수수료 최적화

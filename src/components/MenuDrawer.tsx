@@ -2,6 +2,7 @@ import React from 'react';
 import { X, Plus, Sparkles, MapPin, ExternalLink, Calendar, Users, ChevronRight } from 'lucide-react';
 import { TripData } from '../types/travel';
 import { KeepTripLogo } from './KeepTripLogo';
+import { FontSizeControl } from './FontSizeControl';
 
 interface MenuDrawerProps {
   isOpen: boolean;
@@ -43,6 +44,8 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
               <X className="w-6 h-6 stroke-[2]" />
             </button>
           </div>
+
+          <FontSizeControl className="w-full justify-between" />
 
           {/* Quick AI & Add Buttons */}
           <div className="grid grid-cols-2 gap-2">

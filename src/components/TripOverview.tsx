@@ -2,16 +2,18 @@ import React from 'react';
 import { ArrowLeft, Calendar, Users, Clock, MapPin, Info, ChevronRight, CheckSquare, Sparkles } from 'lucide-react';
 import { TripData } from '../types/travel';
 import { DEST_META } from './TripHome';
+import { FontSizeControl } from './FontSizeControl';
 
 interface TripOverviewProps {
   trip: TripData;
   onGoHome: () => void;
   onStartToday: () => void;
   onOpenPrep: () => void;
+  onOpenDay: (index: number) => void;
 }
 
 /** 일정에 들어가면 가장 먼저 보이는 화면: 첫 안내 + 일정 개요 */
-export const TripOverview: React.FC<TripOverviewProps> = ({ trip, onGoHome, onStartToday, onOpenPrep }) => {
+export const TripOverview: React.FC<TripOverviewProps> = ({ trip, onGoHome, onStartToday, onOpenPrep, onOpenDay }) => {
   const meta = DEST_META[trip.destinationType] || DEST_META.GLOBAL;
   const mustCount = trip.checklist.filter((c) => c.tier === 'MUST').length;
 
@@ -29,12 +31,15 @@ export const TripOverview: React.FC<TripOverviewProps> = ({ trip, onGoHome, onSt
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/10" />
         <div className="relative px-5 md:px-8 pt-4 pb-6 md:py-10 text-white">
+          <div className="flex items-center justify-between gap-2">
           <button
             onClick={onGoHome}
-            className="inline-flex items-center gap-1 text-xs font-semibold bg-white/20 hover:bg-white/30 backdrop-blur px-2.5 py-1.5 rounded-lg"
+            className="shrink-0 whitespace-nowrap inline-flex items-center gap-1 text-xs font-semibold bg-white/20 hover:bg-white/30 backdrop-blur px-2.5 py-1.5 rounded-lg"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> 전체 일정
           </button>
+          <FontSizeControl dark />
+          </div>
           <div className="mt-10 md:mt-16 text-xs font-bold opacity-90">
             {meta.flag} {meta.label} · {trip.durationText}
           </div>
@@ -95,10 +100,10 @@ export const TripOverview: React.FC<TripOverviewProps> = ({ trip, onGoHome, onSt
             <MapPin className="w-5 h-5 text-[#EFA03D]" /> 일정 개요
           </h2>
           <ol className="relative space-y-3">
-            {trip.days.map((d) => (
+            {trip.days.map((d, idx) => (
               <li key={d.dayNumber}>
                 <button
-                  onClick={onStartToday}
+                  onClick={() => onOpenDay(idx)}
                   className="w-full text-left bg-white rounded-2xl border border-slate-200 p-4 hover:border-slate-300 transition-colors"
                 >
                   <div className="flex items-start gap-3">

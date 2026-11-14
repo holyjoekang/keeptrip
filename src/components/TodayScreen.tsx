@@ -10,6 +10,8 @@ interface TodayScreenProps {
   onOpenMenu: () => void;
   onOpenAdvisor: () => void;
   onGoToVoiceRecord?: (spotTitle: string) => void;
+  dayIndex: number;
+  onDayChange: (i: number) => void;
 }
 
 export const TodayScreen: React.FC<TodayScreenProps> = ({
@@ -18,18 +20,17 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
   onOpenTaxiAddress,
   onOpenMenu,
   onOpenAdvisor,
-  onGoToVoiceRecord
+  onGoToVoiceRecord,
+  dayIndex: dayIndexProp,
+  onDayChange
 }) => {
-  const defaultDayIndex = trip.destinationType === 'CN' ? 2 : trip.destinationType === 'MY' ? 1 : 0;
-  const [dayIndex, setDayIndex] = useState<number>(Math.min(defaultDayIndex, trip.days.length - 1));
+  const dayIndex = Math.max(0, Math.min(dayIndexProp, trip.days.length - 1));
+  const setDayIndex = onDayChange;
   const activeDay = trip.days[dayIndex] || trip.days[0];
 
   const featuredStop = activeDay.stops.find((s) => s.docent) || activeDay.stops[2] || activeDay.stops[0];
 
-  const [completedStops, setCompletedStops] = useState<Record<string, boolean>>({
-    [`${activeDay.dayNumber}-0`]: true,
-    [`${activeDay.dayNumber}-1`]: true
-  });
+  const [completedStops, setCompletedStops] = useState<Record<string, boolean>>({});
 
   // Inline audio player state for desktop docent preview
   const [isPlayingAudio, setIsPlayingAudio] = useState<boolean>(false);
@@ -137,20 +138,12 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
                     {featuredStop.title.replace(/\(.*\)/, '').trim()}
                   </h2>
                   <div className="text-base font-semibold text-slate-300 mt-0.5 tracking-wide font-sans">
-                    {trip.destinationType === 'CN'
-                      ? (featuredStop.title.includes('수정방')
-                          ? '水井坊博物馆'
-                          : featuredStop.title.includes('홍야동')
-                          ? '洪崖洞景区'
-                          : featuredStop.title.includes('리지바')
-                          ? '李子坝轻轨站'
-                          : '水井坊博物馆')
-                      : trip.destinationType === 'MY' ? 'Ah Soon Kor Hokkien Mee' : featuredStop.description}
+                    {featuredStop.docent?.spotName && featuredStop.docent.spotName !== featuredStop.title ? featuredStop.docent.spotName : featuredStop.description}
                   </div>
                 </div>
 
                 <p className="text-xs text-slate-300 mt-3 leading-relaxed">
-                  {trip.destinationType === 'CN' || trip.destinationType === 'MY' ? '호텔에서 택시 약 25분 · 도착하면 해설이 자동으로 열려요' : `${activeDay.theme} · 도착하면 해설이 자동으로 열려요`}
+                  {`${activeDay.theme} · 도착하면 해설이 자동으로 열려요`}
                 </p>
 
                 {/* 2 Action Buttons */}
@@ -193,9 +186,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
                 <div>
                   <h3 className="font-bold text-xs text-[#92400E]">오늘 꼭 챙기기</h3>
                   <p className="text-xs text-[#78350F] mt-1 leading-relaxed">
-                    {trip.destinationType === 'CN'
-                      ? '수정방 투어·시음 예약 확인 · 여권 지참 (박물관 입장 시 필요할 수 있음)'
-                      : trip.destinationType === 'MY' ? '페낭 호커센터용 현금 잔돈(20링깃) 지참 · 3핀 플러그 어댑터 챙기기' : (trip.checklist.find((c) => c.tier === 'MUST')?.title || trip.keyRules[0]?.title)}
+                    {(() => { const t = activeDay.stops.find((s) => s.smartTip || s.feeTip); return t ? `${t.title.replace(/\(.*\)/, '').trim()} · ${t.smartTip || t.feeTip}` : (trip.checklist.find((c) => c.tier === 'MUST')?.title || trip.keyRules[0]?.title); })()}
                   </p>
                 </div>
               </div>
