@@ -27,11 +27,17 @@ export const AiAdvisorModal: React.FC<AiAdvisorModalProps> = ({ isOpen, onClose,
         '충칭북역에서 청두동역 고속철 탈 때 종이표 필요한가요?',
         '중국 훠궈집에서 600위안 나왔을 때 3% 수수료 안 내는 법'
       ]
-    : [
+    : trip.destinationType === 'MY'
+    ? [
         '그랩에 한국 카드 직접 쓰면 수수료 3% 붙는 거 사실인가요?',
         '그랩페이 지갑(GrabPay)에 트래블카드/토스로 충전하는 방법 알려줘',
         '페낭 조지타운 맛집 갈 때 현금 얼마나 환전해야 해?',
         '말레이시아 디지털 입국카드(MDAC) 언제 어떻게 작성해?'
+      ]
+    : [
+        `${trip.title} 출발 전에 꼭 준비할 것은?`,
+        `${trip.days[0]?.city || '첫날'} 일정에서 주의할 점 알려줘`,
+        ...trip.keyRules.slice(0, 2).map((r) => `"${r.title}"은 어떻게 하면 돼?`)
       ];
 
   const handleAsk = async (queryText?: string) => {
