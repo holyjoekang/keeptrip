@@ -8,8 +8,8 @@ interface ConnectivityCardProps {
 }
 
 export const ConnectivityCard: React.FC<ConnectivityCardProps> = ({ trip }) => {
-  const [days, setDays] = useState<number>(trip.destinationType === 'CN' ? 5 : 8);
-  const [partySize, setPartySize] = useState<number>(trip.destinationType === 'CN' ? 4 : 2);
+  const [days, setDays] = useState<number>(Math.max(1, trip.days.length));
+  const [partySize, setPartySize] = useState<number>(() => Math.min(50, parseInt(trip.partyText.match(/\d+/)?.[0] || '2', 10) || 2));
   const [eSimSupported, setESimSupported] = useState<boolean>(true);
 
   const analysis = analyzeConnectivity(
