@@ -43,6 +43,7 @@ export const TaxiAddressModal: React.FC<TaxiAddressModalProps> = ({
         : spot.title.includes('제쯔구전')
         ? '四川省成都市崇州市街子古镇味江景区'
         : `${spot.title}`)
+    : destinationType !== 'MY' ? (spot.docent?.spotName || spot.title)
     : (spot.title.includes('아순거')
         ? 'Ah Soon Kor Hokkien Mee, 168, Jalan Macalister, George Town, Penang'
         : spot.title.includes('극락사')
@@ -58,9 +59,11 @@ export const TaxiAddressModal: React.FC<TaxiAddressModalProps> = ({
     window.speechSynthesis.cancel();
     const text = isChina
       ? `师傅，请带我去 ${localName}`
-      : `Tolong hantar saya ke ${localName}`;
+      : destinationType === 'MY' ? `Tolong hantar saya ke ${localName}`
+      : destinationType === 'KR' ? `기사님, ${localName}으로 가 주세요`
+      : `Please take me to ${localName}`;
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = isChina ? 'zh-CN' : 'en-US';
+    utterance.lang = isChina ? 'zh-CN' : destinationType === 'KR' ? 'ko-KR' : 'en-US';
     window.speechSynthesis.speak(utterance);
   };
 

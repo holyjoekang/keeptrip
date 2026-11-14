@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Calendar, Users, Clock, MapPin, Plus, ArrowRight, ExternalLink } from 'lucide-react';
 import { TripData, DestinationType } from '../types/travel';
 import { KeepTripLogo } from './KeepTripLogo';
+import { FontSizeControl } from './FontSizeControl';
 
 export const DEST_META: Record<DestinationType, { flag: string; label: string; grad: string }> = {
   CN: { flag: '🇨🇳', label: '중국', grad: 'from-red-500 to-amber-500' },
@@ -58,7 +59,7 @@ export const TripHome: React.FC<TripHomeProps> = ({ trips, lastTripId, onEnterTr
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 md:pt-8 pb-16">
       {/* Header */}
-      <div className="flex items-end justify-between gap-3 mb-5 md:mb-7">
+      <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-3 mb-5 md:mb-7">
         <div>
           <KeepTripLogo size="md" className="md:hidden mb-3" />
           <h1 className="text-xl md:text-3xl font-extrabold text-[#1E2856]">나의 여행 일정</h1>
@@ -69,12 +70,15 @@ export const TripHome: React.FC<TripHomeProps> = ({ trips, lastTripId, onEnterTr
             </span>
           </p>
         </div>
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
+        <FontSizeControl />
         <button
           onClick={onOpenCustomModal}
           className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#1E2856] text-white text-sm font-bold hover:bg-[#2b3874]"
         >
           <Plus className="w-4 h-4" /> 새 일정 등록
         </button>
+        </div>
       </div>
 
       {/* Mobile: 아이콘 그리드 */}

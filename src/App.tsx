@@ -23,15 +23,8 @@ export default function App() {
         const parsed: TripData[] = JSON.parse(saved);
         return PRESET_TRIPS.map((preset) => {
           const found = parsed.find((p) => p.id === preset.id);
-          return found
-            ? {
-                ...preset,
-                ...found,
-                bestMoments: preset.bestMoments || found.bestMoments,
-                days: preset.days,
-                keyRules: preset.keyRules
-              }
-            : preset;
+          // 미리 등록된 일정은 항상 최신 데이터 사용 (예전 저장본이 내용을 덮지 않도록)
+          return found ? { ...found, ...preset } : preset;
         }).concat(parsed.filter((p) => !PRESET_TRIPS.some((pr) => pr.id === p.id)));
       } catch (e) {
         console.error(e);
@@ -66,6 +59,7 @@ export default function App() {
   }, []);
 
   const enterTrip = (id: string) => {
+    if (id !== selectedTripId) setDayIndex(0);
     setSelectedTripId(id);
     setActiveTab('overview');
     setView('trip');
@@ -86,7 +80,8 @@ export default function App() {
   const [isCustomModalOpen, setIsCustomModalOpen] = useState<boolean>(false);
   const [activeDocentSpot, setActiveDocentSpot] = useState<ItineraryStop | null>(null);
   const [activeTaxiSpot, setActiveTaxiSpot] = useState<ItineraryStop | null>(null);
-  const [currentRecordingSpotTitle, setCurrentRecordingSpotTitle] = useState<string>('수정방 박물관');
+  const [currentRecordingSpotTitle, setCurrentRecordingSpotTitle] = useState<string>('');
+  const [dayIndex, setDayIndex] = useState<number>(0);
 
   // Active Trip
   const activeTrip = trips.find((t) => t.id === selectedTripId) || trips[0];
@@ -96,7 +91,13 @@ export default function App() {
     const saved = localStorage.getItem('my_travel_checklists');
     if (saved) {
       try {
-        return JSON.parse(saved);
+        const parsed: Record<string, ChecklistItem[]> = JSON.parse(saved);
+        // 최신 체크리스트에 완료 여부만 이어 붙임
+        PRESET_TRIPS.forEach((t) => {
+          const done = new Set((parsed[t.id] || []).filter((i) => i.completed).map((i) => i.id));
+          parsed[t.id] = t.checklist.map((i) => ({ ...i, completed: done.has(i.id) }));
+        });
+        return parsed;
       } catch (e) {
         console.error(e);
       }
@@ -175,7 +176,9 @@ export default function App() {
   };
 
   const handleQuickRecord = () => {
-    setCurrentRecordingSpotTitle(activeTrip.destinationType === 'CN' ? '수정방 박물관' : 'Durich 두리안 빙수');
+    const day = activeTrip.days[dayIndex] || activeTrip.days[0];
+    const stop = day?.stops.find((s) => s.docent) || day?.stops[0];
+    setCurrentRecordingSpotTitle(stop ? stop.title.replace(/\(.*\)/, '').trim() : activeTrip.title);
     setActiveTab('record');
   };
 
@@ -225,6 +228,11 @@ export default function App() {
             trip={activeTrip}
             onGoHome={goHome}
             onStartToday={() => setActiveTab('today')}
+            onOpenDay={(i) => {
+              setDayIndex(i);
+              setActiveTab('today');
+              window.scrollTo(0, 0);
+            }}
             onOpenPrep={() => setActiveTab('prep')}
           />
         )}
@@ -239,6 +247,8 @@ export default function App() {
             onOpenMenu={() => setIsMenuOpen(true)}
             onOpenAdvisor={() => setIsAdvisorOpen(true)}
             onGoToVoiceRecord={handleGoToVoiceRecordFromDocent}
+            dayIndex={dayIndex}
+            onDayChange={setDayIndex}
           />
         )}
 
@@ -257,6 +267,7 @@ export default function App() {
           <VoiceRecordScreen
             trip={activeTrip}
             activeSpotTitle={currentRecordingSpotTitle}
+            key={`${activeTrip.id}-${currentRecordingSpotTitle}`}
             voiceNotes={currentVoiceNotes}
             onSaveVoiceNote={handleSaveVoiceNote}
             onClose={() => setActiveTab('today')}

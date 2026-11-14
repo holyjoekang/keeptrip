@@ -12,23 +12,22 @@ interface VoiceRecordScreenProps {
 
 export const VoiceRecordScreen: React.FC<VoiceRecordScreenProps> = ({
   trip,
-  activeSpotTitle = '수정방 박물관',
+  activeSpotTitle = '',
   voiceNotes,
   onSaveVoiceNote,
   onClose
 }) => {
-  const [isRecording, setIsRecording] = useState<boolean>(true);
-  const [recordSeconds, setRecordSeconds] = useState<number>(24);
+  const [isRecording, setIsRecording] = useState<boolean>(false);
+  const [recordSeconds, setRecordSeconds] = useState<number>(0);
   const [transcript, setTranscript] = useState<string>(
-    '발효 구덩이가 600년 동안 계속 쓰였다는 게 놀랍다. 시음한 술은 생각보다 부드러웠고, 아내는 향이 좋다고…'
+    ''
   );
-  const [hasAttachedPhoto, setHasAttachedPhoto] = useState<boolean>(true);
+  const [hasAttachedPhoto, setHasAttachedPhoto] = useState<boolean>(false);
   const [playingNoteId, setPlayingNoteId] = useState<string | null>(null);
 
   const [selectedTags, setSelectedTags] = useState<string[]>([
     `장소 · ${activeSpotTitle}`,
-    trip.destinationType === 'CN' ? '체험 · 백주 시음' : '체험 · 무상킹 시식',
-    trip.partyText.includes('친구') ? '함께 · 친구들' : '함께 · 아내',
+    `함께 · ${trip.partyText}`,
     '추천 · 좋았음'
   ]);
 
@@ -132,7 +131,7 @@ export const VoiceRecordScreen: React.FC<VoiceRecordScreenProps> = ({
       <div className="flex items-center justify-between border-b border-slate-200/60 pb-3">
         <div>
           <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-            DAY 3 · {activeSpotTitle} · 실시간 현장 보이스
+            {activeSpotTitle || trip.title} · 실시간 현장 보이스
           </div>
           <h1 className="text-2xl lg:text-3xl font-black text-[#111827] tracking-tight mt-0.5">
             말로 남기기
@@ -270,7 +269,7 @@ export const VoiceRecordScreen: React.FC<VoiceRecordScreenProps> = ({
 
             <p className="text-xs text-slate-600 leading-relaxed pt-1">
               {hasAttachedPhoto
-                ? '📷 현장에서 촬영한 사진 4장과 자동으로 매칭되었습니다. 스토리 탭의 DAY 3 웹 매거진 섹션에 즉시 수록됩니다.'
+                ? '📷 현장 사진과 함께 스토리 탭에 수록됩니다.'
                 : '현장 음성 기록을 텍스트와 함께 스토리 탭에 저장합니다.'}
             </p>
           </section>
@@ -289,50 +288,11 @@ export const VoiceRecordScreen: React.FC<VoiceRecordScreenProps> = ({
                 오늘 남긴 기록
               </h2>
               <span className="text-xs font-bold text-[#EFA03D] bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
-                총 {voiceNotes.length + 2}건 기록 중
+                총 {voiceNotes.length}건 기록 중
               </span>
             </div>
 
             <div className="space-y-3 divide-y divide-slate-100 text-xs">
-              <div className="pt-2 flex items-start justify-between gap-3">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="font-black text-[#1E2856]">13:10</span>
-                    <span className="font-extrabold text-slate-900">마파두부 진마파 식당</span>
-                  </div>
-                  <p className="font-medium text-slate-600 italic">
-                    "마파두부 — 이번 여행 최고의 맛. 얼얼한 화자오 향이 일품."
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => handlePlayVoicePreview('sample-1', '마파두부, 이번 여행 최고의 맛. 얼얼한 화자오 향이 일품.')}
-                  className="p-2 rounded-xl text-slate-500 hover:text-[#1E2856] hover:bg-slate-100 shrink-0"
-                  aria-label="음성 듣기"
-                >
-                  {playingNoteId === 'sample-1' ? <Pause className="w-4 h-4 text-rose-500" /> : <Volume2 className="w-4 h-4" />}
-                </button>
-              </div>
-
-              <div className="pt-3 flex items-start justify-between gap-3">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="font-black text-[#1E2856]">10:05</span>
-                    <span className="font-extrabold text-slate-900">충칭-청두 고속철</span>
-                  </div>
-                  <p className="font-medium text-slate-600 italic">
-                    "고속철 창밖 풍경, 생각보다 깨끗하고 시속 300km로 매끄럽게 달린다."
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => handlePlayVoicePreview('sample-2', '고속철 창밖 풍경, 생각보다 깨끗하고 시속 300km로 매끄럽게 달린다.')}
-                  className="p-2 rounded-xl text-slate-500 hover:text-[#1E2856] hover:bg-slate-100 shrink-0"
-                  aria-label="음성 듣기"
-                >
-                  {playingNoteId === 'sample-2' ? <Pause className="w-4 h-4 text-rose-500" /> : <Volume2 className="w-4 h-4" />}
-                </button>
-              </div>
 
               {/* Any additional voice notes from state */}
               {voiceNotes.map((note) => (

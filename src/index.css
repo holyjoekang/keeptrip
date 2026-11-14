@@ -30,3 +30,7 @@ body {
   position: relative;
   background-color: #F4F6F8;
 }
+
+/* 글자 크기 설정 (FontSizeControl) — 화면 전체를 함께 키워 레이아웃이 깨지지 않게 */
+html[data-font="large"] { zoom: 1.15; }
+html[data-font="xlarge"] { zoom: 1.3; }
