@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Calendar, Users, Clock, MapPin, Plus, ArrowRight, ExternalLink } from 'lucide-react';
 import { TripData, DestinationType } from '../types/travel';
 import { KeepTripLogo } from './KeepTripLogo';
+import { Keep121Link } from './Keep121Link';
 import { FontSizeControl } from './FontSizeControl';
 
 export const DEST_META: Record<DestinationType, { flag: string; label: string; grad: string }> = {
@@ -61,7 +62,10 @@ export const TripHome: React.FC<TripHomeProps> = ({ trips, lastTripId, onEnterTr
       {/* Header */}
       <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-3 mb-5 md:mb-7">
         <div>
-          <KeepTripLogo size="md" className="md:hidden mb-3" />
+          <div className="md:hidden mb-3 flex items-center justify-between gap-2">
+            <KeepTripLogo size="md" />
+            <Keep121Link />
+          </div>
           <h1 className="text-xl md:text-3xl font-extrabold text-[#1E2856]">나의 여행 일정</h1>
           <p className="text-xs md:text-sm text-slate-500 mt-1">
             <span className="md:hidden">아이콘을 눌러 일정에 들어가세요 · {trips.length}개</span>
@@ -71,6 +75,7 @@ export const TripHome: React.FC<TripHomeProps> = ({ trips, lastTripId, onEnterTr
           </p>
         </div>
         <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
+        <span className="hidden md:block"><Keep121Link /></span>
         <FontSizeControl />
         <button
           onClick={onOpenCustomModal}
