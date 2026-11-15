@@ -1,6 +1,7 @@
 import React from 'react';
 import { Info, Clock, CheckSquare, MessageSquare, BookOpen, Mic, Sparkles, Plus, ChevronDown } from 'lucide-react';
 import { KeepTripLogo } from './KeepTripLogo';
+import { Keep121Link } from './Keep121Link';
 import { KeepTripTab } from './BottomNav';
 import { TripData } from '../types/travel';
 
@@ -31,6 +32,7 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({
         <div className="flex items-center justify-between h-16 lg:h-18 gap-2">
           {/* Left: Brand Logo & Current Trip Switcher */}
           <div className="flex items-center gap-2.5 lg:gap-4 shrink-0">
+            <Keep121Link />
             <button onClick={onGoHome} aria-label="전체 일정 홈" title="전체 일정 홈">
               <KeepTripLogo size="md" />
             </button>

@@ -2,6 +2,7 @@ import React from 'react';
 import { X, Plus, Sparkles, MapPin, ExternalLink, Calendar, Users, ChevronRight } from 'lucide-react';
 import { TripData } from '../types/travel';
 import { KeepTripLogo } from './KeepTripLogo';
+import { Keep121Link } from './Keep121Link';
 import { FontSizeControl } from './FontSizeControl';
 
 interface MenuDrawerProps {
@@ -36,6 +37,8 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
             <button onClick={() => { onClose(); onGoHome?.(); }} aria-label="전체 일정 홈">
               <KeepTripLogo size="md" />
             </button>
+            <div className="flex items-center gap-1.5">
+            <Keep121Link />
             <button
               onClick={onClose}
               className="p-1.5 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100"
@@ -43,6 +46,7 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
             >
               <X className="w-6 h-6 stroke-[2]" />
             </button>
+            </div>
           </div>
 
           <FontSizeControl className="w-full justify-between" />
