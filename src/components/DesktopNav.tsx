@@ -65,19 +65,6 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({
               <span>개요</span>
             </button>
             <button
-              onClick={() => onTabChange('today')}
-              className={`px-2.5 lg:px-4 py-1.5 lg:py-2 rounded-xl text-xs font-extrabold flex items-center gap-1.5 lg:gap-2 transition-all whitespace-nowrap ${
-                activeTab === 'today'
-                  ? 'bg-[#1E2856] text-white shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-              }`}
-            >
-              <Clock className="w-3.5 h-3.5 lg:w-4 lg:h-4 stroke-[2.5]" />
-              <span className="md:inline lg:hidden">오늘</span>
-              <span className="hidden lg:inline">오늘의 일정</span>
-            </button>
-
-            <button
               onClick={() => onTabChange('prep')}
               className={`px-2.5 lg:px-4 py-1.5 lg:py-2 rounded-xl text-xs font-extrabold flex items-center gap-1.5 lg:gap-2 transition-all whitespace-nowrap ${
                 activeTab === 'prep'
@@ -88,6 +75,19 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({
               <CheckSquare className="w-3.5 h-3.5 lg:w-4 lg:h-4 stroke-[2.5]" />
               <span className="md:inline lg:hidden">준비</span>
               <span className="hidden lg:inline">맞춤 준비</span>
+            </button>
+
+            <button
+              onClick={() => onTabChange('today')}
+              className={`px-2.5 lg:px-4 py-1.5 lg:py-2 rounded-xl text-xs font-extrabold flex items-center gap-1.5 lg:gap-2 transition-all whitespace-nowrap ${
+                activeTab === 'today'
+                  ? 'bg-[#1E2856] text-white shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+              }`}
+            >
+              <Clock className="w-3.5 h-3.5 lg:w-4 lg:h-4 stroke-[2.5]" />
+              <span className="md:inline lg:hidden">일정</span>
+              <span className="hidden lg:inline">일정</span>
             </button>
 
             <button
