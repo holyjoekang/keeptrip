@@ -30,19 +30,6 @@ export const BottomNav: React.FC<BottomNavProps> = ({
       {/* Bottom Navigation Bar */}
       <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-slate-200 shadow-sm">
         <div className="max-w-[480px] mx-auto flex items-center justify-around h-16 px-2">
-          {/* 오늘 */}
-          <button
-            onClick={() => onTabChange('today')}
-            className={`flex flex-col items-center justify-center flex-1 py-1 transition-colors ${
-              activeTab === 'today' ? 'text-[#1E2856]' : 'text-slate-400 hover:text-slate-600'
-            }`}
-          >
-            <Clock className={`w-5 h-5 ${activeTab === 'today' ? 'stroke-[2.5]' : 'stroke-2'}`} />
-            <span className={`text-[11px] mt-1 ${activeTab === 'today' ? 'font-bold' : 'font-medium'}`}>
-              오늘
-            </span>
-          </button>
-
           {/* 준비 */}
           <button
             onClick={() => onTabChange('prep')}
@@ -53,6 +40,19 @@ export const BottomNav: React.FC<BottomNavProps> = ({
             <CheckSquare className={`w-5 h-5 ${activeTab === 'prep' ? 'stroke-[2.5]' : 'stroke-2'}`} />
             <span className={`text-[11px] mt-1 ${activeTab === 'prep' ? 'font-bold' : 'font-medium'}`}>
               준비
+            </span>
+          </button>
+
+          {/* 일정 */}
+          <button
+            onClick={() => onTabChange('today')}
+            className={`flex flex-col items-center justify-center flex-1 py-1 transition-colors ${
+              activeTab === 'today' ? 'text-[#1E2856]' : 'text-slate-400 hover:text-slate-600'
+            }`}
+          >
+            <Clock className={`w-5 h-5 ${activeTab === 'today' ? 'stroke-[2.5]' : 'stroke-2'}`} />
+            <span className={`text-[11px] mt-1 ${activeTab === 'today' ? 'font-bold' : 'font-medium'}`}>
+              일정
             </span>
           </button>
 

@@ -33,7 +33,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
   const isLiveDay = clock.phase === 'during' && clock.dayIndex === dayIndex && clock.nextStopIndex >= 0;
   const featuredStop = isLiveDay
     ? activeDay.stops[clock.nextStopIndex]
-    : activeDay.stops.find((s) => s.docent) || activeDay.stops[2] || activeDay.stops[0];
+    : activeDay.stops[0];
 
   const [completedStops, setCompletedStops] = useState<Record<string, boolean>>({});
 
