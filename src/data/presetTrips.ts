@@ -74,7 +74,7 @@ const BASE_TRIPS: TripData[] = [
       },
       {
         title: '고속철 탑승 시 실물 여권 스캔',
-        description: '충칭북역→청두동역 고속철은 별도 종이표 없이 여권 인식 게이트로 바로 통과합니다. 단, 보안 검색과 짐 검사가 공항 수준이므로 열차 출발 최소 35분 전에 역에 도착해야 합니다.',
+        description: '사핑바역→청두동역 고속철은 별도 종이표 없이 여권 인식 게이트로 바로 통과합니다. 단, 보안 검색과 짐 검사가 공항 수준이므로 열차 출발 최소 35분 전에 역에 도착해야 합니다.',
         tag: '고속철 이동'
       }
     ],
@@ -159,28 +159,28 @@ const BASE_TRIPS: TripData[] = [
         dayOfWeek: '수',
         city: '충칭 (Chongqing)',
         theme: '충칭 도착 · 불맛의 시작과 홍야동 야경',
-        dayHighlights: ['인천 14:00 출발 → 충칭 CKG 착륙', '해방비(解放碑) 보행가 체크인', '정통 구궁격 마라 훠궈 저녁', '홍야동(洪崖洞) 센과 치히로 입체 야경'],
+        dayHighlights: ['CA440 인천 T1 14:00 → 충칭 장베이 T3 16:55', '래플스 시티 오우첸 호텔 체크인 (2박)', '정통 구궁격 마라 훠궈 저녁', '홍야동(洪崖洞) 센과 치히로 입체 야경'],
         stops: [
           {
             id: 'stop-cn-1',
             time: '14:00',
-            title: '인천 ICN 이륙',
-            description: '충칭 직항 탑승 · 비행시간 약 3시간 50분',
+            title: 'CA440 인천 T1 출발',
+            description: '에어차이나 CA440 · 인천국제공항 T1 → 충칭 장베이 T3 · 3시간 55분',
             category: 'flight'
           },
           {
             id: 'stop-cn-2',
-            time: '17:15',
-            title: '충칭 장베이 공항(CKG) 착륙',
+            time: '16:55',
+            title: '충칭 장베이 국제공항 T3 도착',
             description: '입국 수속 및 짐 찾기 (약 45분)',
             category: 'transit',
             smartTip: '공항에서 시내까지 알리페이 디디(Didi)로 이동 시 약 60~80위안'
           },
           {
             id: 'stop-cn-3',
-            time: '18:45',
-            title: '해방비 중심가 호텔 체크인',
-            description: '2박 머무를 숙소 도착 및 짐 풀기',
+            time: '18:30',
+            title: '오우첸 스카이라이즈 리버사이드 호텔 (래플스 시티 충칭) 체크인',
+            description: '重庆欧辰高空江景酒店(解放碑来福士广场) · 시티뷰 복층 퀸룸 2실 + 복층 퀸룸(혼합 전망) 2실 · 11/18–11/20 2박',
             category: 'hotel'
           },
           {
@@ -263,11 +263,11 @@ const BASE_TRIPS: TripData[] = [
         dayOfWeek: '금',
         city: '충칭 → 청두 (Chengdu)',
         theme: '고속철 이동 · 수정방(水井坊) 백주 문화와 청두의 여유',
-        dayHighlights: ['충칭북역 → 청두동역 고속철 (1시간 20분)', '수정방 박물관 방문 및 백주 테이스팅', '금리(锦里) 고거리 삼국지 문화 산책', '사천식 마파두부 만찬'],
+        dayHighlights: ['사핑바 10:30 → 청두동 11:32 고속철 (1시간 2분)', '수정방 박물관 방문 및 백주 테이스팅', '금리(锦里) 고거리 삼국지 문화 산책', '사천식 마파두부 만찬'],
         stops: [
-          { time: '09:00', title: '호텔 체크아웃 후 충칭북역 이동', description: '열차 출발 35분 전 역 도착 필수', category: 'transit' },
-          { time: '10:15', title: '고속철 G8622 충칭북 → 청두동', description: '시속 300km로 쓰촨 분지 주파', category: 'transit' },
-          { time: '11:40', title: '청두동역 도착 & 호텔 체크인', description: '청두 시내 호텔 체크인', category: 'hotel' },
+          { time: '09:20', title: '호텔 체크아웃 후 사핑바역(沙坪坝) 이동', description: '해방비 → 사핑바역 택시 약 30분 · 열차 출발 35분 전 역 도착 필수', category: 'transit' },
+          { time: '10:30', title: '고속철 사핑바 → 청두동', description: '사핑바(沙坪坝) 10:30 출발 → 청두동(成都东) 11:32 도착 · 1시간 2분 · 실물 여권으로 탑승', category: 'transit' },
+          { time: '12:15', title: '파크 인 바이 라디슨 청두 춘시루 타이쿠리 체크인', description: '成都春熙路太古里丽柏酒店 · 부티크 퀸룸 4실 · 11/20–11/22 2박 (이른 도착 시 짐 보관)', category: 'hotel' },
           {
             id: 'stop-cn-7',
             time: '14:30',
@@ -330,12 +330,12 @@ const BASE_TRIPS: TripData[] = [
         date: '11월 22일',
         dayOfWeek: '일',
         city: '청두 → 서울',
-        theme: '아침 차 한 잔 후 서울로 귀환',
-        dayHighlights: ['청두 공항 이동', '청두 12:55 출발 → 인천 귀국', '일상으로의 복귀와 추억 정리'],
+        theme: '이른 아침 톈푸 공항 출발 · 서울 귀환',
+        dayHighlights: ['청두 톈푸 공항 T1 이동', 'CA401 청두 08:30 → 인천 12:55', '일상으로의 복귀와 추억 정리'],
         stops: [
-          { time: '08:30', title: '호텔 체크아웃 및 공항 이동', category: 'transit' },
-          { time: '12:55', title: '청두 이륙 → 인천 향발', category: 'flight' },
-          { time: '17:30', title: '인천 ICN 착륙', category: 'transit' }
+          { time: '05:40', title: '호텔 체크아웃 및 톈푸 공항 이동', description: '춘시루 → 청두 톈푸 국제공항(TFU) 차량 약 1시간 · 출발 2시간 전 도착', category: 'transit' },
+          { time: '08:30', title: 'CA401 청두 톈푸 T1 출발', description: '에어차이나 CA401 · 청두 톈푸 국제공항 T1 → 인천국제공항 T1 · 3시간 25분', category: 'flight' },
+          { time: '12:55', title: '인천국제공항 T1 도착', category: 'transit' }
         ]
       }
     ]

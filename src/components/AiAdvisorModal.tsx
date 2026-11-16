@@ -24,7 +24,7 @@ export const AiAdvisorModal: React.FC<AiAdvisorModalProps> = ({ isOpen, onClose,
     ? [
         '알리페이에 토스뱅크/트래블로그 연결 시 200위안 수수료 정책이 어떻게 돼?',
         '중국에서 로밍형 eSIM을 쓰면 진짜 VPN 없이 카톡이랑 구글이 돼?',
-        '충칭북역에서 청두동역 고속철 탈 때 종이표 필요한가요?',
+        '사핑바역에서 청두동역 고속철 탈 때 종이표 필요한가요?',
         '중국 훠궈집에서 600위안 나왔을 때 3% 수수료 안 내는 법'
       ]
     : trip.destinationType === 'MY'
