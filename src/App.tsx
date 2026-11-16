@@ -14,6 +14,7 @@ import { AiAdvisorModal } from './components/AiAdvisorModal';
 import { CustomTripModal } from './components/CustomTripModal';
 import { TripHome } from './components/TripHome';
 import { TripOverview } from './components/TripOverview';
+import { getTripClock } from './utils/tripClock';
 
 export default function App() {
   const [trips, setTrips] = useState<TripData[]>(() => {
@@ -42,13 +43,26 @@ export default function App() {
     () => readHashTrip() || localStorage.getItem('my_travel_last_trip') || 'trip-china-2026'
   );
   const [view, setView] = useState<'home' | 'trip'>(() => (readHashTrip() ? 'trip' : 'home'));
-  const [activeTab, setActiveTab] = useState<KeepTripTab>('overview');
+  // 접속 시각 기준 첫 화면: 출발 전 → 준비, 여행 중 → 오늘(현재 DAY), 다녀온 뒤 → 스토리
+  const startViewFor = (id: string): { tab: KeepTripTab; day: number } => {
+    const t = trips.find((x) => x.id === id);
+    const c = t ? getTripClock(t) : null;
+    if (!c || c.phase === 'unknown') return { tab: 'overview', day: 0 };
+    if (c.phase === 'before') return { tab: 'prep', day: 0 };
+    if (c.phase === 'after') return { tab: 'story', day: 0 };
+    return { tab: 'today', day: c.dayIndex };
+  };
+  const [activeTab, setActiveTab] = useState<KeepTripTab>(() => startViewFor(selectedTripId).tab);
+  const [dayIndex, setDayIndex] = useState<number>(() => startViewFor(selectedTripId).day);
 
   useEffect(() => {
     const onHash = () => {
       const id = readHashTrip();
       if (id) {
+        const sv = startViewFor(id);
         setSelectedTripId(id);
+        setActiveTab(sv.tab);
+        setDayIndex(sv.day);
         setView('trip');
       } else {
         setView('home');
@@ -59,9 +73,10 @@ export default function App() {
   }, []);
 
   const enterTrip = (id: string) => {
-    if (id !== selectedTripId) setDayIndex(0);
+    const sv = startViewFor(id);
+    setDayIndex(sv.day);
     setSelectedTripId(id);
-    setActiveTab('overview');
+    setActiveTab(sv.tab);
     setView('trip');
     localStorage.setItem('my_travel_last_trip', id);
     if (readHashTrip() !== id) window.location.hash = `trip=${encodeURIComponent(id)}`;
@@ -81,7 +96,6 @@ export default function App() {
   const [activeDocentSpot, setActiveDocentSpot] = useState<ItineraryStop | null>(null);
   const [activeTaxiSpot, setActiveTaxiSpot] = useState<ItineraryStop | null>(null);
   const [currentRecordingSpotTitle, setCurrentRecordingSpotTitle] = useState<string>('');
-  const [dayIndex, setDayIndex] = useState<number>(0);
 
   // Active Trip
   const activeTrip = trips.find((t) => t.id === selectedTripId) || trips[0];

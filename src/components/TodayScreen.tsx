@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu, Navigation, Car, AlertCircle, CheckCircle, Volume2, Sparkles, MapPin, Star, BookOpen, Camera, Play, Pause } from 'lucide-react';
 import { TripData, ItineraryStop } from '../types/travel';
 import { KeepTripLogo } from './KeepTripLogo';
+import { getTripClock } from '../utils/tripClock';
 
 interface TodayScreenProps {
   trip: TripData;
@@ -28,7 +29,11 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
   const setDayIndex = onDayChange;
   const activeDay = trip.days[dayIndex] || trip.days[0];
 
-  const featuredStop = activeDay.stops.find((s) => s.docent) || activeDay.stops[2] || activeDay.stops[0];
+  const clock = getTripClock(trip);
+  const isLiveDay = clock.phase === 'during' && clock.dayIndex === dayIndex && clock.nextStopIndex >= 0;
+  const featuredStop = isLiveDay
+    ? activeDay.stops[clock.nextStopIndex]
+    : activeDay.stops.find((s) => s.docent) || activeDay.stops[2] || activeDay.stops[0];
 
   const [completedStops, setCompletedStops] = useState<Record<string, boolean>>({});
 
@@ -257,7 +262,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
                       <div className="flex items-center gap-2 shrink-0">
                         {isNext && (
                           <span className="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-[#1E2856] text-white">
-                            다음
+                            {isLiveDay ? '지금·다음' : '다음'}
                           </span>
                         )}
 

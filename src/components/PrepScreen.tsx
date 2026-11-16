@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getTripClock } from '../utils/tripClock';
 import { Check, CheckCircle2, ChevronDown, ChevronUp, DollarSign, Wifi, Info, MinusCircle, AlertTriangle, ShieldCheck, TrendingDown, Coffee } from 'lucide-react';
 import { TripData, ChecklistItem } from '../types/travel';
 import { calculatePaymentOptimization } from '../utils/feeOptimizer';
@@ -33,8 +34,23 @@ export const PrepScreen: React.FC<PrepScreenProps> = ({
 
   const filteredItems = checklist.filter((c) => c.tier === activeTab);
 
+  const clock = getTripClock(trip);
+
   return (
     <div className="pb-28 max-w-7xl mx-auto w-full p-4 sm:p-6 lg:p-8 space-y-6">
+      {clock.phase === 'before' && (
+        <div className="rounded-2xl bg-[#1E2856] text-white px-5 py-4 flex items-center justify-between gap-3">
+          <div>
+            <div className="text-2xl font-extrabold tracking-tight">D-{clock.dDay}</div>
+            <div className="text-xs text-white/80 mt-0.5">
+              {trip.dateRange} 출발 · {trip.days[0]?.stops[0]?.time ? `${trip.days[0].stops[0].time} ${trip.days[0].stops[0].title}` : trip.title}
+            </div>
+          </div>
+          <div className="text-xs font-bold text-[#EFA03D] text-right">
+            {clock.dDay <= 3 ? '출발 임박 · 필수 준비부터 확인하세요' : '여유 있게 준비하세요'}
+          </div>
+        </div>
+      )}
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/60 pb-3">
         <div>
