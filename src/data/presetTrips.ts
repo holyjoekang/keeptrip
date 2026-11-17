@@ -159,7 +159,7 @@ const BASE_TRIPS: TripData[] = [
         dayOfWeek: '수',
         city: '충칭 (Chongqing)',
         theme: '충칭 도착 · 불맛의 시작과 홍야동 야경',
-        dayHighlights: ['CA440 인천 T1 14:00 → 충칭 장베이 T3 16:55', '래플스 시티 오우첸 호텔 체크인 (2박)', '정통 구궁격 마라 훠궈 저녁', '홍야동(洪崖洞) 센과 치히로 입체 야경'],
+        dayHighlights: ['CA440 인천 T1 14:00 → 충칭 장베이 T3 16:55', '래플스 시티 오우첸 호텔 체크인 (2박)', '시우냥 촨촨샹(꼬치 훠궈) 저녁', '홍야동(洪崖洞) 센과 치히로 입체 야경'],
         stops: [
           {
             id: 'stop-cn-1',
@@ -180,15 +180,19 @@ const BASE_TRIPS: TripData[] = [
             id: 'stop-cn-3',
             time: '18:30',
             title: '오우첸 스카이라이즈 리버사이드 호텔 (래플스 시티 충칭) 체크인',
-            description: '重庆欧辰高空江景酒店(解放碑来福士广场) · 시티뷰 복층 퀸룸 2실 + 복층 퀸룸(혼합 전망) 2실 · 11/18–11/20 2박',
-            category: 'hotel'
+            description: '重庆欧辰高空江景酒店(解放碑来福士广场) · 위중구 신화로 1호 광다콩구 차오톈먼센터 21층 · 시티뷰 복층 퀸룸 2실 + 복층 퀸룸(혼합 전망) 2실 · 11/18–11/20 2박',
+            category: 'hotel',
+            localName: '重庆欧辰高空江景酒店(解放碑来福士广场)',
+            address: '重庆市渝中区新华路1号光大控股朝天门中心21楼'
           },
           {
             id: 'stop-cn-4',
             time: '19:30',
-            title: '구궁격(九宫格) 마라 훠궈 만찬',
-            description: '진한 우지(牛油) 베이스 마라 훠궈와 참기름 마늘장. 친구 4명의 첫 건배',
+            title: '린장먼 시우냥 촨촨샹 (临江门秀嬢串串香 본점) 저녁',
+            description: '충칭 대표 꼬치 훠궈(촨촨샹) 맛집 · 위중구 린장로 1호 3층 · 지하철 2호선 린장먼역 지하통로 B7 출구 도보 250m · 영업 11:00–23:30',
             category: 'food',
+            localName: '临江门秀嬢串串香(重庆总店)',
+            address: '重庆市渝中区临江路1号3层附2号商铺',
             isRecommended: true,
             feeTip: '200위안 초과 시 일행과 2개 알리페이로 분할결제 추천',
             docent: {
@@ -223,7 +227,8 @@ const BASE_TRIPS: TripData[] = [
               photoSpotTip: '다리 중간 전망 포인트에서 인물과 황금빛 목조 누각을 함께 프레이밍하세요.',
               recommendedDuration: '1시간 ~ 1시간 30분'
             }
-          }
+          },
+          { time: '22:30', title: '숙소 복귀 · 오우첸 스카이라이즈 리버사이드 호텔', description: '홍야동 → 호텔 도보 약 15분 (차오톈먼 래플스 시티)', category: 'hotel', localName: '重庆欧辰高空江景酒店(解放碑来福士广场)', address: '重庆市渝中区新华路1号光大控股朝天门中心21楼' }
         ]
       },
       {
@@ -232,9 +237,10 @@ const BASE_TRIPS: TripData[] = [
         dayOfWeek: '목',
         city: '충칭 (Chongqing)',
         theme: '입체 8D 마도(魔都) 도시 탐험 & 충칭 야경 파노라마',
-        dayHighlights: ['리지바(李子坝) 아파트 관통 모노레일', '에링얼창(鹅岭二厂) 예술구', '남산 일과수(一棵树) 전망대', '강변 포장마차 꼬치구이(소고 샤오카오)'],
+        dayHighlights: ['토피아·토토마토 카페', '리지바(李子坝) 아파트 관통 모노레일', '에링얼창(鹅岭二厂) 예술구', '남산 비파원 훠궈 & 일과수(一棵树) 전망대'],
         stops: [
           { time: '09:00', title: '충칭 소면(重庆小面) 아침 식사', description: '골목길 플라스틱 의자에서 먹는 얼큰한 소면', category: 'food' },
+          { time: '09:40', title: '토피아 (Topia 해방비점) 커피', description: '해방비 상권 인기 카페 · 위중구 다퉁로 73호 · 지하철 2호선 린장먼역 지하통로 B5 출구 도보 260m · 영업 09:00–20:00 · 린장먼역에서 2호선 타고 리지바로', category: 'food', localName: 'Topia(解放碑店)', address: '重庆市渝中区大同路73号' },
           {
             id: 'stop-cn-6',
             time: '10:30',
@@ -253,8 +259,10 @@ const BASE_TRIPS: TripData[] = [
             }
           },
           { time: '13:00', title: '에링얼창 문창원 산책 & 티타임', description: '옛 지폐 인쇄 공장을 재생한 예술 공간', category: 'sightseeing' },
-          { time: '18:00', title: '남산 훠궈 파크 or 장강 뷰 다이닝', description: '산 전체가 훠궈 식당인 비파원', category: 'food' },
-          { time: '20:30', title: '남산 일과수 전망대 야경', description: '양쯔강과 가릉강 불빛 바다 조망', category: 'sightseeing' }
+          { time: '16:00', title: '토토마토 (TOTOMATO 다이자샹점) 카페', description: '홍야동 옆 절벽 산책로 다이자샹(戴家巷) 카페 · 다이자샹 25호 2단원 1-7호 (순환 액세서리 가게 옆) · 2호선 린장먼역 1번 출구 도보 530m · 영업 09:00–20:00', category: 'food', localName: 'TOTOMATO(戴家巷店)', address: '重庆市渝中区戴家巷25号2单元1-7号' },
+          { time: '18:00', title: '비파원 식위선 훠궈 (枇杷园食为鲜火锅)', description: '남산 비파원 신선 훠궈 · 구글 평점 4.2 · 1인 ¥100–150 · 난안구 황줴두 136 (충칭유락원) · 식사 후 일과수 전망대로', category: 'food', isRecommended: true, localName: '枇杷园食为鲜火锅', address: '重庆市南岸区黄桷渡136号(重庆游乐园)' },
+          { time: '20:30', title: '남산 일과수 전망대 야경', description: '양쯔강과 가릉강 불빛 바다 조망', category: 'sightseeing' },
+          { time: '22:00', title: '숙소 복귀 · 오우첸 스카이라이즈 리버사이드 호텔', description: '남산 → 해방비 택시(디디) 약 30분', category: 'hotel', localName: '重庆欧辰高空江景酒店(解放碑来福士广场)', address: '重庆市渝中区新华路1号光大控股朝天门中心21楼' }
         ]
       },
       {
@@ -267,7 +275,7 @@ const BASE_TRIPS: TripData[] = [
         stops: [
           { time: '09:20', title: '호텔 체크아웃 후 사핑바역(沙坪坝) 이동', description: '해방비 → 사핑바역 택시 약 30분 · 열차 출발 35분 전 역 도착 필수', category: 'transit' },
           { time: '10:30', title: '고속철 사핑바 → 청두동', description: '사핑바(沙坪坝) 10:30 출발 → 청두동(成都东) 11:32 도착 · 1시간 2분 · 실물 여권으로 탑승', category: 'transit' },
-          { time: '12:15', title: '파크 인 바이 라디슨 청두 춘시루 타이쿠리 체크인', description: '成都春熙路太古里丽柏酒店 · 부티크 퀸룸 4실 · 11/20–11/22 2박 (이른 도착 시 짐 보관)', category: 'hotel' },
+          { time: '12:15', title: '파크 인 바이 라디슨 청두 춘시루 타이쿠리 체크인', description: '成都春熙路太古里丽柏酒店 · 진장구 쭝푸로 57호 (2025년 오픈) · 부티크 퀸룸 4실 · 11/20–11/22 2박 (이른 도착 시 짐 보관)', category: 'hotel', localName: '成都春熙路太古里丽柏酒店', address: '四川省成都市锦江区总府路57号' },
           {
             id: 'stop-cn-7',
             time: '14:30',
@@ -289,7 +297,8 @@ const BASE_TRIPS: TripData[] = [
             }
           },
           { time: '18:00', title: '진마파두부 본점 만찬', description: '마파두부의 원조집에서 얼얼한 화쟈오의 진수 만끽', category: 'food', isRecommended: true },
-          { time: '20:00', title: '금리(锦里) 홍등 거리 야경', description: '삼국지 촉나라 감성이 살아있는 홍등 길 산책', category: 'sightseeing' }
+          { time: '20:00', title: '금리(锦里) 홍등 거리 야경', description: '삼국지 촉나라 감성이 살아있는 홍등 길 산책', category: 'sightseeing' },
+          { time: '21:30', title: '숙소 복귀 · 파크 인 바이 라디슨 청두 춘시루 타이쿠리', description: '금리 → 춘시루 택시(디디) 약 20분', category: 'hotel', localName: '成都春熙路太古里丽柏酒店', address: '四川省成都市锦江区总府路57号' }
         ]
       },
       {
@@ -322,7 +331,8 @@ const BASE_TRIPS: TripData[] = [
             }
           },
           { time: '13:00', title: '시골 촌두부 요리와 토종닭 점심', description: '구전 특산물인 탕마빙과 산나물, 맑은 두부 전골 식사', category: 'food' },
-          { time: '18:30', title: '사천 명품 요리 & 수정방 클래식 만찬', description: '4박 5일 여행을 마무리하는 품격 있는 만찬', category: 'food', isRecommended: true }
+          { time: '18:30', title: '사천 명품 요리 & 수정방 클래식 만찬', description: '4박 5일 여행을 마무리하는 품격 있는 만찬', category: 'food', isRecommended: true },
+          { time: '21:00', title: '숙소 복귀 · 파크 인 바이 라디슨 청두 춘시루 타이쿠리', description: '내일 05:40 체크아웃 · 짐 정리 후 일찍 취침', category: 'hotel', localName: '成都春熙路太古里丽柏酒店', address: '四川省成都市锦江区总府路57号' }
         ]
       },
       {
