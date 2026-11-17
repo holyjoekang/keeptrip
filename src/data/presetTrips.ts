@@ -276,6 +276,7 @@ const BASE_TRIPS: TripData[] = [
           { time: '09:20', title: '호텔 체크아웃 후 사핑바역(沙坪坝) 이동', description: '해방비 → 사핑바역 택시 약 30분 · 열차 출발 35분 전 역 도착 필수', category: 'transit' },
           { time: '10:30', title: '고속철 사핑바 → 청두동', description: '사핑바(沙坪坝) 10:30 출발 → 청두동(成都东) 11:32 도착 · 1시간 2분 · 실물 여권으로 탑승', category: 'transit' },
           { time: '12:15', title: '파크 인 바이 라디슨 청두 춘시루 타이쿠리 체크인', description: '成都春熙路太古里丽柏酒店 · 진장구 쭝푸로 57호 (2025년 오픈) · 부티크 퀸룸 4실 · 11/20–11/22 2박 (이른 도착 시 짐 보관)', category: 'hotel', localName: '成都春熙路太古里丽柏酒店', address: '四川省成都市锦江区总府路57号' },
+          { time: '13:00', title: '만산면관 (万三面馆 칭룽정제점) 점심', description: '미쉐린 빕 구르망 · 이빈식 란몐(燃面, 비빔면)과 라러우 · 진장구 칭룽정제 131호 부1호 · 호텔에서 택시 약 10분 · 광둥식 소시지 외 구이류는 18시부터', category: 'food', localName: '万三面馆(青龙正街)', address: '成都市锦江区青龙正街131号附1号' },
           {
             id: 'stop-cn-7',
             time: '14:30',
@@ -296,7 +297,7 @@ const BASE_TRIPS: TripData[] = [
               recommendedDuration: '1시간 30분'
             }
           },
-          { time: '18:00', title: '진마파두부 본점 만찬', description: '마파두부의 원조집에서 얼얼한 화쟈오의 진수 만끽', category: 'food', isRecommended: true },
+          { time: '18:00', title: '진마파두부 (陈麻婆豆腐 칭화로 플래그십) 만찬', description: '마파두부의 원조집에서 얼얼한 화쟈오의 진수 만끽 · 미쉐린 가이드 등재 · 칭양구 칭화로 10호 부10-12호 · 식사 후 금리까지 택시 약 15분', category: 'food', isRecommended: true, localName: '陈麻婆豆腐(青华路店)', address: '成都市青羊区青华路10号附10-12号' },
           { time: '20:00', title: '금리(锦里) 홍등 거리 야경', description: '삼국지 촉나라 감성이 살아있는 홍등 길 산책', category: 'sightseeing' },
           { time: '21:30', title: '숙소 복귀 · 파크 인 바이 라디슨 청두 춘시루 타이쿠리', description: '금리 → 춘시루 택시(디디) 약 20분', category: 'hotel', localName: '成都春熙路太古里丽柏酒店', address: '四川省成都市锦江区总府路57号' }
         ]
@@ -331,7 +332,7 @@ const BASE_TRIPS: TripData[] = [
             }
           },
           { time: '13:00', title: '시골 촌두부 요리와 토종닭 점심', description: '구전 특산물인 탕마빙과 산나물, 맑은 두부 전골 식사', category: 'food' },
-          { time: '18:30', title: '사천 명품 요리 & 수정방 클래식 만찬', description: '4박 5일 여행을 마무리하는 품격 있는 만찬', category: 'food', isRecommended: true },
+          { time: '18:30', title: '오씨회 (吴氏荟 The Woo\'s) 사천요리 & 수정방 마지막 만찬', description: '미쉐린 빕 구르망 · 큰 나무에 가려진 고택의 가족 경영 사천요리 · 추천: 마른 고추 더미에 튀긴 자연산 황조기, 흐르는 소 찹쌀 경단 · 진장구 훙지중로 39호 부17호 · 해외 신용카드 불가(알리페이·현금) · ☎ +86 28 6527 2678', category: 'food', isRecommended: true, localName: '吴氏荟', address: '成都市锦江区宏济中路39号附17号' },
           { time: '21:00', title: '숙소 복귀 · 파크 인 바이 라디슨 청두 춘시루 타이쿠리', description: '내일 05:40 체크아웃 · 짐 정리 후 일찍 취침', category: 'hotel', localName: '成都春熙路太古里丽柏酒店', address: '四川省成都市锦江区总府路57号' }
         ]
       },
