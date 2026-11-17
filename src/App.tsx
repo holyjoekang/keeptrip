@@ -15,6 +15,8 @@ import { CustomTripModal } from './components/CustomTripModal';
 import { TripHome } from './components/TripHome';
 import { TripOverview } from './components/TripOverview';
 import { getTripClock } from './utils/tripClock';
+import { fetchSnapshot, toTrips, toGuides, saveNewTrip } from './lib/db';
+import { setSpotGuides } from './utils/spotGuide';
 
 export default function App() {
   const [trips, setTrips] = useState<TripData[]>(() => {
@@ -144,6 +146,28 @@ export default function App() {
     localStorage.setItem('my_travel_trips', JSON.stringify(trips));
   }, [trips]);
 
+  // DB(keepTrip)에서 최신 일정 · 장소 안내 불러오기 (실패하면 번들 스냅샷 유지)
+  useEffect(() => {
+    let alive = true;
+    fetchSnapshot()
+      .then((snap) => {
+        if (!alive) return;
+        setSpotGuides(toGuides(snap));
+        const fresh = toTrips(snap);
+        setTrips((prev) => [...fresh, ...prev.filter((p) => !fresh.some((f) => f.id === p.id) && !PRESET_TRIPS.some((pr) => pr.id === p.id))]);
+        setChecklists((prev) => {
+          const next = { ...prev };
+          fresh.forEach((t) => {
+            const done = new Set((prev[t.id] || []).filter((i) => i.completed).map((i) => i.id));
+            next[t.id] = t.checklist.map((i) => ({ ...i, completed: done.has(i.id) }));
+          });
+          return next;
+        });
+      })
+      .catch((e) => console.warn('DB 불러오기 실패, 저장된 데이터 사용', e));
+    return () => { alive = false; };
+  }, []);
+
   useEffect(() => {
     localStorage.setItem('my_travel_checklists', JSON.stringify(checklists));
   }, [checklists]);
@@ -178,6 +202,7 @@ export default function App() {
 
   const handleAddTrip = (newTrip: TripData) => {
     setTrips((prev) => [newTrip, ...prev]);
+    saveNewTrip(newTrip).catch((e) => console.warn('새 일정 DB 저장 실패 (이 기기에는 저장됨)', e));
     setChecklists((prev) => ({
       ...prev,
       [newTrip.id]: newTrip.checklist

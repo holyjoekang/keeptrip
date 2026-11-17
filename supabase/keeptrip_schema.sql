@@ -104,6 +104,39 @@ create policy "check item" on packing_items for update using (true) with check (
 drop policy if exists "delete own item" on packing_items;
 create policy "delete own item" on packing_items for delete using (is_custom);
 
+revoke all on trips, trip_days, trip_stops, checklist_items, spot_guides, packing_groups, packing_items from anon, authenticated;
 grant select on all tables in schema public to anon, authenticated;
 grant insert, delete on packing_groups to anon, authenticated;
 grant insert, update (checked), delete on packing_items to anon, authenticated;
+
+-- 앱에서 새 일정 등록 (기존 일정 덮어쓰기 불가)
+create or replace function add_trip(t jsonb) returns text
+language plpgsql security definer set search_path = public as $$
+begin
+  if exists (select 1 from trips where id = t->>'id') then
+    raise exception 'trip % already exists', t->>'id';
+  end if;
+  insert into trips (id, title, subtitle, date_range, duration_text, party_text, destination_type, hero_image,
+    default_budget_krw, key_rules, best_moments, source_url, sort_order)
+  values (t->>'id', t->>'title', t->>'subtitle', t->>'dateRange', t->>'durationText', t->>'partyText',
+    t->>'destinationType', t->>'heroImage', (t->>'defaultBudgetKrw')::int, coalesce(t->'keyRules', '[]'),
+    t->'bestMoments', t->>'sourceUrl', (select coalesce(min(sort_order), 0) - 1 from trips));
+  insert into trip_days
+    select t->>'id', (d->>'dayNumber')::int, d->>'date', d->>'dayOfWeek', d->>'city', d->>'theme',
+      coalesce(d->'dayHighlights', '[]'), d->>'dayReflection'
+    from jsonb_array_elements(coalesce(t->'days', '[]')) d;
+  insert into trip_stops (trip_id, day_number, position, stop_key, time, title, description, category, fee_tip,
+    smart_tip, docent, is_recommended, local_name, address, guide_id)
+    select t->>'id', (d->>'dayNumber')::int, (s.ord - 1)::int, s.v->>'id', s.v->>'time', s.v->>'title',
+      s.v->>'description', s.v->>'category', s.v->>'feeTip', s.v->>'smartTip', s.v->'docent',
+      (s.v->>'isRecommended')::boolean, s.v->>'localName', s.v->>'address', s.v->>'guideId'
+    from jsonb_array_elements(coalesce(t->'days', '[]')) d,
+      jsonb_array_elements(coalesce(d->'stops', '[]')) with ordinality s(v, ord);
+  insert into checklist_items (trip_id, id, position, tier, category, title, description, estimated_saving_krw, action_tip)
+    select t->>'id', c.v->>'id', (c.ord - 1)::int, c.v->>'tier', c.v->>'category', c.v->>'title',
+      c.v->>'description', (c.v->>'estimatedSavingKrw')::int, c.v->>'actionTip'
+    from jsonb_array_elements(coalesce(t->'checklist', '[]')) with ordinality c(v, ord);
+  return t->>'id';
+end $$;
+revoke all on function add_trip(jsonb) from public;
+grant execute on function add_trip(jsonb) to anon, authenticated;

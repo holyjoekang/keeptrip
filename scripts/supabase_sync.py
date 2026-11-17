@@ -1,10 +1,11 @@
 """KeepTrip ↔ Supabase 동기화 (Supabase 관리 API 사용, 토큰은 네트워크 프록시가 주입).
 
   python3 scripts/supabase_sync.py setup   # keepTrip 프로젝트 찾기/생성 + 스키마 + 앱 접속 설정 파일
-  python3 scripts/supabase_sync.py push    # 번들 데이터(일정·장소안내·준비물) → DB (짐싸기 체크/추가 항목은 보존)
+  python3 scripts/supabase_sync.py push    # 초기 데이터(scripts/data/*_export/_seed.json) → DB. ⚠ DB에서 고친 일정 내용을 덮어씀 (짐싸기 체크/추가 항목은 보존)
   python3 scripts/supabase_sync.py pull    # DB → src/data/dbSnapshot.json (오프라인 대비 스냅샷)
 
-새 일정 추가: Supabase 대시보드(Table editor)에서 trips → trip_days → trip_stops 순으로 행 추가하면 앱에 바로 반영.
+원본은 DB. 수정 후 pull 로 앱 번들 스냅샷 갱신.
+새 일정 추가: 앱의 '새 일정 등록'(DB 저장) 또는 Supabase 대시보드(Table editor)에서 trips → trip_days → trip_stops 순으로 행 추가하면 앱에 바로 반영.
 """
 import json, os, secrets, sys, time, urllib.request, urllib.error
 from pathlib import Path
@@ -69,8 +70,8 @@ def setup():
 
 def push():
     trips = json.loads((R / "scripts/data/trips_export.json").read_text(encoding="utf-8"))
-    guides = json.loads((R / "src/data/spotGuides.json").read_text(encoding="utf-8"))
-    packing = json.loads((R / "src/data/packingLists.json").read_text(encoding="utf-8"))
+    guides = json.loads((R / "scripts/data/spotGuides_seed.json").read_text(encoding="utf-8"))
+    packing = json.loads((R / "scripts/data/packingLists_seed.json").read_text(encoding="utf-8"))
     trows, drows, srows, crows = [], [], [], []
     for i, t in enumerate(trips):
         trows.append({"id": t["id"], "title": t["title"], "subtitle": t.get("subtitle"), "date_range": t.get("dateRange"),
