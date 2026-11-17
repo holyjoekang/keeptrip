@@ -4,6 +4,7 @@ import { Check, CheckCircle2, ChevronDown, ChevronUp, DollarSign, Wifi, Info, Mi
 import { TripData, ChecklistItem } from '../types/travel';
 import { calculatePaymentOptimization } from '../utils/feeOptimizer';
 import { analyzeConnectivity } from '../utils/dataConnectivity';
+import { PackingChecklist, hasPackingList } from './PackingChecklist';
 
 interface PrepScreenProps {
   trip: TripData;
@@ -18,7 +19,7 @@ export const PrepScreen: React.FC<PrepScreenProps> = ({
   onToggleItem,
   onOpenAdvisor
 }) => {
-  const [activeTab, setActiveTab] = useState<'MUST' | 'SAVINGS' | 'IGNORE'>('MUST');
+  const [activeTab, setActiveTab] = useState<'MUST' | 'SAVINGS' | 'IGNORE' | 'PACK'>('MUST');
   const [showFeeSimulator, setShowFeeSimulator] = useState<boolean>(true);
   const [budgetKrw, setBudgetKrw] = useState<number>(trip.defaultBudgetKrw || 1000000);
 
@@ -158,7 +159,7 @@ export const PrepScreen: React.FC<PrepScreenProps> = ({
       </div>
 
       {/* 3 Segment Tabs matching PDF Page 3 */}
-      <div className="flex gap-2 max-w-md">
+      <div className="flex gap-2 max-w-xl">
         <button
           onClick={() => setActiveTab('MUST')}
           className={`flex-1 py-2.5 rounded-full text-xs font-extrabold transition-all ${
@@ -191,7 +192,22 @@ export const PrepScreen: React.FC<PrepScreenProps> = ({
         >
           신경 끄기
         </button>
+
+        {hasPackingList(trip.id) && (
+          <button
+            onClick={() => setActiveTab('PACK')}
+            className={`flex-1 py-2.5 rounded-full text-xs font-extrabold transition-all ${
+            activeTab === 'PACK'
+              ? 'bg-[#1E2856] text-white shadow-xs'
+              : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
+          }`}
+          >
+            짐 싸기
+          </button>
+        )}
       </div>
+
+      {activeTab === 'PACK' && <PackingChecklist tripId={trip.id} />}
 
       {/* Checklist Grid (1 col on mobile, 2 cols on tablet/desktop) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -281,7 +297,7 @@ export const PrepScreen: React.FC<PrepScreenProps> = ({
       </div>
 
       {/* Global Ignore Guideline Card matching bottom of Page 3 */}
-      {activeTab !== 'IGNORE' && (
+      {activeTab !== 'IGNORE' && activeTab !== 'PACK' && (
         <div className="p-4 rounded-2xl border border-dashed border-slate-300 bg-white text-xs flex items-center gap-2.5 text-slate-600">
           <MinusCircle className="w-4 h-4 text-slate-400 shrink-0" />
           <span className="leading-snug">
