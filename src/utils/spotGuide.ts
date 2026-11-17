@@ -1,4 +1,5 @@
-import guides from '../data/spotGuides.json';
+import snapshot from '../data/dbSnapshot.json';
+import { DbSnapshot, toGuides } from '../lib/db';
 import { ItineraryStop } from '../types/travel';
 
 export interface SpotGuide {
@@ -14,7 +15,8 @@ export interface SpotGuide {
   photoNote?: string;
 }
 
-const G = guides as Record<string, SpotGuide>;
+let G: Record<string, SpotGuide> = toGuides(snapshot as unknown as DbSnapshot);
+export const setSpotGuides = (g: Record<string, SpotGuide>) => { G = g; };
 export const getSpotGuide = (stop: ItineraryStop | null): SpotGuide | null =>
   (stop?.guideId && G[stop.guideId]) || null;
 
