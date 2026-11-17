@@ -38,7 +38,6 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
   const [completedStops, setCompletedStops] = useState<Record<string, boolean>>({});
 
   // Inline audio player state for desktop docent preview
-  const [isPlayingAudio, setIsPlayingAudio] = useState<boolean>(false);
 
   const toggleStop = (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -47,28 +46,6 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
 
   const completedCount = activeDay.stops.filter((_, idx) => completedStops[`${activeDay.dayNumber}-${idx}`]).length;
 
-  const handleToggleDocentAudio = () => {
-    if (!window.speechSynthesis) return;
-
-    if (isPlayingAudio) {
-      window.speechSynthesis.cancel();
-      setIsPlayingAudio(false);
-    } else {
-      window.speechSynthesis.cancel();
-      const doc = featuredStop.docent;
-      const text = doc
-        ? `${featuredStop.title}. ${doc.summary}. ${doc.historyAndStory}. 꼭 보셔야 할 것은 ${doc.mustSeePoints.join('. ')}`
-        : `${featuredStop.title}. ${featuredStop.description || ''}`;
-
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'ko-KR';
-      utterance.rate = 0.95;
-      utterance.onend = () => setIsPlayingAudio(false);
-      utterance.onerror = () => setIsPlayingAudio(false);
-      window.speechSynthesis.speak(utterance);
-      setIsPlayingAudio(true);
-    }
-  };
 
   return (
     <div className="pb-28 max-w-7xl mx-auto w-full">
@@ -134,7 +111,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
                     다음 일정{featuredStop.time && featuredStop.time !== '-' ? ` · ${featuredStop.time}` : ''}
                   </span>
                   <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-white/15 text-slate-200">
-                    터치하여 해설 보기
+                    터치하여 사진 · 리뷰 보기
                   </span>
                 </div>
 
@@ -148,7 +125,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
                 </div>
 
                 <p className="text-xs text-slate-300 mt-3 leading-relaxed">
-                  {`${activeDay.theme} · 도착하면 해설이 자동으로 열려요`}
+                  {`${activeDay.theme} · 일정을 누르면 사진 · 리뷰 · 택시 주소가 열려요`}
                 </p>
 
                 {/* 2 Action Buttons */}
@@ -292,21 +269,9 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#EFA03D]" />
                     <h4 className="font-extrabold text-sm text-[#111827]">
-                      현장 도슨트 해설 미리보기 ({featuredStop.title})
+                      장소 미리보기 ({featuredStop.title})
                     </h4>
                   </div>
-
-                  <button
-                    onClick={handleToggleDocentAudio}
-                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
-                      isPlayingAudio
-                        ? 'bg-rose-600 text-white animate-pulse'
-                        : 'bg-[#1E2856] text-white hover:bg-[#192348]'
-                    }`}
-                  >
-                    {isPlayingAudio ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
-                    <span>{isPlayingAudio ? '음성 일시정지' : '도슨트 듣기'}</span>
-                  </button>
                 </div>
 
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed bg-slate-50 p-4 rounded-2xl border border-slate-200/80">

@@ -164,14 +164,14 @@ const BASE_TRIPS: TripData[] = [
           {
             id: 'stop-cn-1',
             time: '14:00',
-            title: 'CA440 인천 T1 출발',
+            title: 'CA440 인천 T1 출발', guideId: 'icn-t1',
             description: '에어차이나 CA440 · 인천국제공항 T1 → 충칭 장베이 T3 · 3시간 55분',
             category: 'flight'
           },
           {
             id: 'stop-cn-2',
             time: '16:55',
-            title: '충칭 장베이 국제공항 T3 도착',
+            title: '충칭 장베이 국제공항 T3 도착', guideId: 'ckg-t3',
             description: '입국 수속 및 짐 찾기 (약 45분)',
             category: 'transit',
             smartTip: '공항에서 시내까지 알리페이 디디(Didi)로 이동 시 약 60~80위안'
@@ -179,7 +179,7 @@ const BASE_TRIPS: TripData[] = [
           {
             id: 'stop-cn-3',
             time: '18:30',
-            title: '오우첸 스카이라이즈 리버사이드 호텔 (래플스 시티 충칭) 체크인',
+            title: '오우첸 스카이라이즈 리버사이드 호텔 (래플스 시티 충칭) 체크인', guideId: 'hotel-cq',
             description: '重庆欧辰高空江景酒店(解放碑来福士广场) · 위중구 신화로 1호 광다콩구 차오톈먼센터 21층 · 시티뷰 복층 퀸룸 2실 + 복층 퀸룸(혼합 전망) 2실 · 11/18–11/20 2박',
             category: 'hotel',
             localName: '重庆欧辰高空江景酒店(解放碑来福士广场)',
@@ -188,7 +188,7 @@ const BASE_TRIPS: TripData[] = [
           {
             id: 'stop-cn-4',
             time: '19:30',
-            title: '린장먼 시우냥 촨촨샹 (临江门秀嬢串串香 본점) 저녁',
+            title: '린장먼 시우냥 촨촨샹 (临江门秀嬢串串香 본점) 저녁', guideId: 'xiuniang',
             description: '충칭 대표 꼬치 훠궈(촨촨샹) 맛집 · 위중구 린장로 1호 3층 · 지하철 2호선 린장먼역 지하통로 B7 출구 도보 250m · 영업 11:00–23:30',
             category: 'food',
             localName: '临江门秀嬢串串香(重庆总店)',
@@ -211,7 +211,7 @@ const BASE_TRIPS: TripData[] = [
           {
             id: 'stop-cn-5',
             time: '21:00',
-            title: '홍야동(洪崖洞) 야경 및 천사문 대교',
+            title: '홍야동(洪崖洞) 야경 및 천사문 대교', guideId: 'hongyadong',
             description: '절벽에 지어진 11층 목조 조각 누각 조명 감상. 천사문대교(千厮门大桥) 보도교에서 사진 촬영',
             category: 'sightseeing',
             isRecommended: true,
@@ -228,7 +228,7 @@ const BASE_TRIPS: TripData[] = [
               recommendedDuration: '1시간 ~ 1시간 30분'
             }
           },
-          { time: '22:30', title: '숙소 복귀 · 오우첸 스카이라이즈 리버사이드 호텔', description: '홍야동 → 호텔 도보 약 15분 (차오톈먼 래플스 시티)', category: 'hotel', localName: '重庆欧辰高空江景酒店(解放碑来福士广场)', address: '重庆市渝中区新华路1号光大控股朝天门中心21楼' }
+          { time: '22:30', title: '숙소 복귀 · 오우첸 스카이라이즈 리버사이드 호텔', guideId: 'hotel-cq', description: '홍야동 → 호텔 도보 약 15분 (차오톈먼 래플스 시티)', category: 'hotel', localName: '重庆欧辰高空江景酒店(解放碑来福士广场)', address: '重庆市渝中区新华路1号光大控股朝天门中心21楼' }
         ]
       },
       {
@@ -239,12 +239,12 @@ const BASE_TRIPS: TripData[] = [
         theme: '입체 8D 마도(魔都) 도시 탐험 & 충칭 야경 파노라마',
         dayHighlights: ['토피아·토토마토 카페', '리지바(李子坝) 아파트 관통 모노레일', '에링얼창(鹅岭二厂) 예술구', '남산 비파원 훠궈 & 일과수(一棵树) 전망대'],
         stops: [
-          { time: '09:00', title: '충칭 소면(重庆小面) 아침 식사', description: '골목길 플라스틱 의자에서 먹는 얼큰한 소면', category: 'food' },
-          { time: '09:40', title: '토피아 (Topia 해방비점) 커피', description: '해방비 상권 인기 카페 · 위중구 다퉁로 73호 · 지하철 2호선 린장먼역 지하통로 B5 출구 도보 260m · 영업 09:00–20:00 · 린장먼역에서 2호선 타고 리지바로', category: 'food', localName: 'Topia(解放碑店)', address: '重庆市渝中区大同路73号' },
+          { time: '09:00', title: '충칭 소면(重庆小面) 아침 식사', guideId: 'xiaomian', description: '골목길 플라스틱 의자에서 먹는 얼큰한 소면', category: 'food' },
+          { time: '09:40', title: '토피아 (Topia 해방비점) 커피', guideId: 'topia', description: '해방비 상권 인기 카페 · 위중구 다퉁로 73호 · 지하철 2호선 린장먼역 지하통로 B5 출구 도보 260m · 영업 09:00–20:00 · 린장먼역에서 2호선 타고 리지바로', category: 'food', localName: 'Topia(解放碑店)', address: '重庆市渝中区大同路73号' },
           {
             id: 'stop-cn-6',
             time: '10:30',
-            title: '리지바역(李子坝) 모노레일 체험',
+            title: '리지바역(李子坝) 모노레일 체험', guideId: 'liziba',
             description: '아파트 6~8층을 관통하는 세계 유일의 모노레일',
             category: 'sightseeing',
             docent: {
@@ -258,11 +258,11 @@ const BASE_TRIPS: TripData[] = [
               recommendedDuration: '40분'
             }
           },
-          { time: '13:00', title: '에링얼창 문창원 산책 & 티타임', description: '옛 지폐 인쇄 공장을 재생한 예술 공간', category: 'sightseeing' },
-          { time: '16:00', title: '토토마토 (TOTOMATO 다이자샹점) 카페', description: '홍야동 옆 절벽 산책로 다이자샹(戴家巷) 카페 · 다이자샹 25호 2단원 1-7호 (순환 액세서리 가게 옆) · 2호선 린장먼역 1번 출구 도보 530m · 영업 09:00–20:00', category: 'food', localName: 'TOTOMATO(戴家巷店)', address: '重庆市渝中区戴家巷25号2单元1-7号' },
-          { time: '18:00', title: '비파원 식위선 훠궈 (枇杷园食为鲜火锅)', description: '남산 비파원 신선 훠궈 · 구글 평점 4.2 · 1인 ¥100–150 · 난안구 황줴두 136 (충칭유락원) · 식사 후 일과수 전망대로', category: 'food', isRecommended: true, localName: '枇杷园食为鲜火锅', address: '重庆市南岸区黄桷渡136号(重庆游乐园)' },
-          { time: '20:30', title: '남산 일과수 전망대 야경', description: '양쯔강과 가릉강 불빛 바다 조망', category: 'sightseeing' },
-          { time: '22:00', title: '숙소 복귀 · 오우첸 스카이라이즈 리버사이드 호텔', description: '남산 → 해방비 택시(디디) 약 30분', category: 'hotel', localName: '重庆欧辰高空江景酒店(解放碑来福士广场)', address: '重庆市渝中区新华路1号光大控股朝天门中心21楼' }
+          { time: '13:00', title: '에링얼창 문창원 산책 & 티타임', guideId: 'eling2', description: '옛 지폐 인쇄 공장을 재생한 예술 공간', category: 'sightseeing' },
+          { time: '16:00', title: '토토마토 (TOTOMATO 다이자샹점) 카페', guideId: 'totomato', description: '홍야동 옆 절벽 산책로 다이자샹(戴家巷) 카페 · 다이자샹 25호 2단원 1-7호 (순환 액세서리 가게 옆) · 2호선 린장먼역 1번 출구 도보 530m · 영업 09:00–20:00', category: 'food', localName: 'TOTOMATO(戴家巷店)', address: '重庆市渝中区戴家巷25号2单元1-7号' },
+          { time: '18:00', title: '비파원 식위선 훠궈 (枇杷园食为鲜火锅)', guideId: 'pipayuan', description: '남산 비파원 신선 훠궈 · 구글 평점 4.2 · 1인 ¥100–150 · 난안구 황줴두 136 (충칭유락원) · 식사 후 일과수 전망대로', category: 'food', isRecommended: true, localName: '枇杷园食为鲜火锅', address: '重庆市南岸区黄桷渡136号(重庆游乐园)' },
+          { time: '20:30', title: '남산 일과수 전망대 야경', guideId: 'yikeshu', description: '양쯔강과 가릉강 불빛 바다 조망', category: 'sightseeing' },
+          { time: '22:00', title: '숙소 복귀 · 오우첸 스카이라이즈 리버사이드 호텔', guideId: 'hotel-cq', description: '남산 → 해방비 택시(디디) 약 30분', category: 'hotel', localName: '重庆欧辰高空江景酒店(解放碑来福士广场)', address: '重庆市渝中区新华路1号光大控股朝天门中心21楼' }
         ]
       },
       {
@@ -273,14 +273,14 @@ const BASE_TRIPS: TripData[] = [
         theme: '고속철 이동 · 수정방(水井坊) 백주 문화와 청두의 여유',
         dayHighlights: ['사핑바 10:30 → 청두동 11:32 고속철 (1시간 2분)', '수정방 박물관 방문 및 백주 테이스팅', '금리(锦里) 고거리 삼국지 문화 산책', '사천식 마파두부 만찬'],
         stops: [
-          { time: '09:20', title: '호텔 체크아웃 후 사핑바역(沙坪坝) 이동', description: '해방비 → 사핑바역 택시 약 30분 · 열차 출발 35분 전 역 도착 필수', category: 'transit' },
-          { time: '10:30', title: '고속철 사핑바 → 청두동', description: '사핑바(沙坪坝) 10:30 출발 → 청두동(成都东) 11:32 도착 · 1시간 2분 · 실물 여권으로 탑승', category: 'transit' },
-          { time: '12:15', title: '파크 인 바이 라디슨 청두 춘시루 타이쿠리 체크인', description: '成都春熙路太古里丽柏酒店 · 진장구 쭝푸로 57호 (2025년 오픈) · 부티크 퀸룸 4실 · 11/20–11/22 2박 (이른 도착 시 짐 보관)', category: 'hotel', localName: '成都春熙路太古里丽柏酒店', address: '四川省成都市锦江区总府路57号' },
-          { time: '13:00', title: '만산면관 (万三面馆 칭룽정제점) 점심', description: '미쉐린 빕 구르망 · 이빈식 란몐(燃面, 비빔면)과 라러우 · 진장구 칭룽정제 131호 부1호 · 호텔에서 택시 약 10분 · 광둥식 소시지 외 구이류는 18시부터', category: 'food', localName: '万三面馆(青龙正街)', address: '成都市锦江区青龙正街131号附1号' },
+          { time: '09:20', title: '호텔 체크아웃 후 사핑바역(沙坪坝) 이동', guideId: 'shapingba', description: '해방비 → 사핑바역 택시 약 30분 · 열차 출발 35분 전 역 도착 필수', category: 'transit' },
+          { time: '10:30', title: '고속철 사핑바 → 청두동', guideId: 'crh', description: '사핑바(沙坪坝) 10:30 출발 → 청두동(成都东) 11:32 도착 · 1시간 2분 · 실물 여권으로 탑승', category: 'transit' },
+          { time: '12:15', title: '파크 인 바이 라디슨 청두 춘시루 타이쿠리 체크인', guideId: 'hotel-cd', description: '成都春熙路太古里丽柏酒店 · 진장구 쭝푸로 57호 (2025년 오픈) · 부티크 퀸룸 4실 · 11/20–11/22 2박 (이른 도착 시 짐 보관)', category: 'hotel', localName: '成都春熙路太古里丽柏酒店', address: '四川省成都市锦江区总府路57号' },
+          { time: '13:00', title: '만산면관 (万三面馆 칭룽정제점) 점심', guideId: 'wansan', description: '미쉐린 빕 구르망 · 이빈식 란몐(燃面, 비빔면)과 라러우 · 진장구 칭룽정제 131호 부1호 · 호텔에서 택시 약 10분 · 광둥식 소시지 외 구이류는 18시부터', category: 'food', localName: '万三面馆(青龙正街)', address: '成都市锦江区青龙正街131号附1号' },
           {
             id: 'stop-cn-7',
             time: '14:30',
-            title: '수정방 박물관',
+            title: '수정방 박물관', guideId: 'shuijingfang',
             description: '600년 양조 역사를 자랑하는 중국 제1방 유적지에서 발효조 견학 및 오리지널 원액 백주 시음',
             category: 'sightseeing',
             isRecommended: true,
@@ -297,9 +297,9 @@ const BASE_TRIPS: TripData[] = [
               recommendedDuration: '1시간 30분'
             }
           },
-          { time: '18:00', title: '진마파두부 (陈麻婆豆腐 칭화로 플래그십) 만찬', description: '마파두부의 원조집에서 얼얼한 화쟈오의 진수 만끽 · 미쉐린 가이드 등재 · 칭양구 칭화로 10호 부10-12호 · 식사 후 금리까지 택시 약 15분', category: 'food', isRecommended: true, localName: '陈麻婆豆腐(青华路店)', address: '成都市青羊区青华路10号附10-12号' },
-          { time: '20:00', title: '금리(锦里) 홍등 거리 야경', description: '삼국지 촉나라 감성이 살아있는 홍등 길 산책', category: 'sightseeing' },
-          { time: '21:30', title: '숙소 복귀 · 파크 인 바이 라디슨 청두 춘시루 타이쿠리', description: '금리 → 춘시루 택시(디디) 약 20분', category: 'hotel', localName: '成都春熙路太古里丽柏酒店', address: '四川省成都市锦江区总府路57号' }
+          { time: '18:00', title: '진마파두부 (陈麻婆豆腐 칭화로 플래그십) 만찬', guideId: 'chenmapo', description: '마파두부의 원조집에서 얼얼한 화쟈오의 진수 만끽 · 미쉐린 가이드 등재 · 칭양구 칭화로 10호 부10-12호 · 식사 후 금리까지 택시 약 15분', category: 'food', isRecommended: true, localName: '陈麻婆豆腐(青华路店)', address: '成都市青羊区青华路10号附10-12号' },
+          { time: '20:00', title: '금리(锦里) 홍등 거리 야경', guideId: 'jinli', description: '삼국지 촉나라 감성이 살아있는 홍등 길 산책', category: 'sightseeing' },
+          { time: '21:30', title: '숙소 복귀 · 파크 인 바이 라디슨 청두 춘시루 타이쿠리', guideId: 'hotel-cd', description: '금리 → 춘시루 택시(디디) 약 20분', category: 'hotel', localName: '成都春熙路太古里丽柏酒店', address: '四川省成都市锦江区总府路57号' }
         ]
       },
       {
@@ -310,11 +310,11 @@ const BASE_TRIPS: TripData[] = [
         theme: '시골 물동네 제쯔구전(街子古镇) 반나절 쉼 & 백주 뒤풀이',
         dayHighlights: ['청청산 자락의 천년 수향마을 제쯔구전 반나절', '강변 야외 찻집에서 개완차(盖碗茶)와 담소', '다시 청두 시내로 복귀', '마지막 밤 사천 요리와 좋은 백주로 회포'],
         stops: [
-          { time: '09:30', title: '제쯔구전(街子古镇)으로 출발', description: '청두 시내에서 1시간 10분 거리의 조용하고 고즈넉한 물마을로 이동', category: 'transit' },
+          { time: '09:30', title: '제쯔구전(街子古镇)으로 출발', guideId: 'jiezi', description: '청두 시내에서 1시간 10분 거리의 조용하고 고즈넉한 물마을로 이동', category: 'transit' },
           {
             id: 'stop-cn-8',
             time: '11:00',
-            title: '제쯔구전 강변 찻집 & 옛거리 산책',
+            title: '제쯔구전 강변 찻집 & 옛거리 산책', guideId: 'jiezi',
             description: '관광버스가 붐비지 않는 현지인들의 휴식처. 졸졸 흐르는 시냇가 옆 대나무 의자에 앉아 자스민차 한 잔',
             category: 'sightseeing',
             isRecommended: true,
@@ -331,9 +331,9 @@ const BASE_TRIPS: TripData[] = [
               recommendedDuration: '3시간 ~ 4시간'
             }
           },
-          { time: '13:00', title: '시골 촌두부 요리와 토종닭 점심', description: '구전 특산물인 탕마빙과 산나물, 맑은 두부 전골 식사', category: 'food' },
-          { time: '18:30', title: '오씨회 (吴氏荟 The Woo\'s) 사천요리 & 수정방 마지막 만찬', description: '미쉐린 빕 구르망 · 큰 나무에 가려진 고택의 가족 경영 사천요리 · 추천: 마른 고추 더미에 튀긴 자연산 황조기, 흐르는 소 찹쌀 경단 · 진장구 훙지중로 39호 부17호 · 해외 신용카드 불가(알리페이·현금) · ☎ +86 28 6527 2678', category: 'food', isRecommended: true, localName: '吴氏荟', address: '成都市锦江区宏济中路39号附17号' },
-          { time: '21:00', title: '숙소 복귀 · 파크 인 바이 라디슨 청두 춘시루 타이쿠리', description: '내일 05:40 체크아웃 · 짐 정리 후 일찍 취침', category: 'hotel', localName: '成都春熙路太古里丽柏酒店', address: '四川省成都市锦江区总府路57号' }
+          { time: '13:00', title: '시골 촌두부 요리와 토종닭 점심', guideId: 'jiezi-lunch', description: '구전 특산물인 탕마빙과 산나물, 맑은 두부 전골 식사', category: 'food' },
+          { time: '18:30', title: '오씨회 (吴氏荟 The Woo\'s) 사천요리 & 수정방 마지막 만찬', guideId: 'woos', description: '미쉐린 빕 구르망 · 큰 나무에 가려진 고택의 가족 경영 사천요리 · 추천: 마른 고추 더미에 튀긴 자연산 황조기, 흐르는 소 찹쌀 경단 · 진장구 훙지중로 39호 부17호 · 해외 신용카드 불가(알리페이·현금) · ☎ +86 28 6527 2678', category: 'food', isRecommended: true, localName: '吴氏荟', address: '成都市锦江区宏济中路39号附17号' },
+          { time: '21:00', title: '숙소 복귀 · 파크 인 바이 라디슨 청두 춘시루 타이쿠리', guideId: 'hotel-cd', description: '내일 05:40 체크아웃 · 짐 정리 후 일찍 취침', category: 'hotel', localName: '成都春熙路太古里丽柏酒店', address: '四川省成都市锦江区总府路57号' }
         ]
       },
       {
@@ -344,9 +344,9 @@ const BASE_TRIPS: TripData[] = [
         theme: '이른 아침 톈푸 공항 출발 · 서울 귀환',
         dayHighlights: ['청두 톈푸 공항 T1 이동', 'CA401 청두 08:30 → 인천 12:55', '일상으로의 복귀와 추억 정리'],
         stops: [
-          { time: '05:40', title: '호텔 체크아웃 및 톈푸 공항 이동', description: '춘시루 → 청두 톈푸 국제공항(TFU) 차량 약 1시간 · 출발 2시간 전 도착', category: 'transit' },
-          { time: '08:30', title: 'CA401 청두 톈푸 T1 출발', description: '에어차이나 CA401 · 청두 톈푸 국제공항 T1 → 인천국제공항 T1 · 3시간 25분', category: 'flight' },
-          { time: '12:55', title: '인천국제공항 T1 도착', category: 'transit' }
+          { time: '05:40', title: '호텔 체크아웃 및 톈푸 공항 이동', guideId: 'tfu', description: '춘시루 → 청두 톈푸 국제공항(TFU) 차량 약 1시간 · 출발 2시간 전 도착', category: 'transit' },
+          { time: '08:30', title: 'CA401 청두 톈푸 T1 출발', guideId: 'tfu', description: '에어차이나 CA401 · 청두 톈푸 국제공항 T1 → 인천국제공항 T1 · 3시간 25분', category: 'flight' },
+          { time: '12:55', title: '인천국제공항 T1 도착', guideId: 'icn-t1', category: 'transit' }
         ]
       }
     ]

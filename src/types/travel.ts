@@ -22,6 +22,7 @@ export interface ItineraryStop {
   isRecommended?: boolean;
   localName?: string; // 택시 기사에게 보여줄 현지어 이름
   address?: string; // 현지어 주소
+  guideId?: string; // src/data/spotGuides.json 키
 }
 
 export interface DayPlan {
