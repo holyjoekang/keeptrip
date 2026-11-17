@@ -1,0 +1,1221 @@
+{
+ "icn-t1": {
+  "name": "인천국제공항 제1여객터미널",
+  "localName": "인천국제공항 제1여객터미널",
+  "address": "인천광역시 중구 공항로 272",
+  "summary": "에어차이나(스타얼라이언스)는 T1에서 탑승합니다. 출국 2~3시간 전 도착을 권장합니다.",
+  "info": [
+   {
+    "label": "항공편",
+    "value": "CA440 14:00 → 충칭 16:55 / 귀국 CA401 12:55 도착"
+   },
+   {
+    "label": "수속",
+    "value": "에어차이나 카운터 · 온라인 체크인 가능"
+   },
+   {
+    "label": "교통",
+    "value": "공항철도(AREX) T1역 · 공항버스"
+   }
+  ],
+  "good": [
+   "T1은 규모가 크지만 출국장 동선 표지가 잘 되어 있음",
+   "공항철도 직결이라 서울역에서 약 1시간"
+  ],
+  "caution": [
+   "보조배터리는 위탁 불가 · 기내 휴대만",
+   "노트북은 보안검색 때 꺼내기",
+   "중국 입국 시 무비자 15일 요건 재확인"
+  ],
+  "sources": [],
+  "photos": [
+   {
+    "src": "spots/icn-t1-1.jpg",
+    "credit": "Arne Müseler · CC BY-SA 3.0 de",
+    "page": "https://commons.wikimedia.org/wiki/File:Incheon_International_Airport_Terminal_1_Departure.jpg"
+   },
+   {
+    "src": "spots/icn-t1-2.jpg",
+    "credit": "ノボホショコロトソ · CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Incheon_International_Airport_Terminal_1_Arrival_3.jpg"
+   },
+   {
+    "src": "spots/icn-t1-3.jpg",
+    "credit": "Bonnielou2013\n\n This photo was taken with Samsung Galaxy Not · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Few_people_in_arrival_hall_at_Incheon_International_Airport_Terminal_1_during_the_coronavirus_outbreak_20200306_114257.jpg"
+   }
+  ]
+ },
+ "ckg-t3": {
+  "name": "충칭 장베이 국제공항 T3",
+  "localName": "重庆江北国际机场T3航站楼",
+  "address": "重庆市渝北区江北国际机场T3航站楼",
+  "summary": "충칭의 관문 공항. 국제선은 T3에 도착하며 지하철 10호선 · 3호선과 연결됩니다.",
+  "info": [
+   {
+    "label": "시내까지",
+    "value": "해방비 · 차오톈먼까지 택시 약 40~50분 · 디디 60~80위안"
+   },
+   {
+    "label": "지하철",
+    "value": "10호선 → 환승해 시내 (짐 많으면 택시 추천)"
+   }
+  ],
+  "good": [
+   "T3는 신청사라 넓고 깔끔한 편",
+   "택시 · 디디 승차장이 잘 정리되어 있음"
+  ],
+  "caution": [
+   "입국 심사 · 짐 찾기에 약 45분 예상",
+   "택시는 공식 승차장에서만 · 호객 기사 피하기"
+  ],
+  "sources": [],
+  "photos": [
+   {
+    "src": "spots/ckg-t3-1.jpg",
+    "credit": "Juukeihc at English Wikipedia · CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Panorama_of_Chongqing_Jiangbei_Airport_Terminal_3.JPG"
+   },
+   {
+    "src": "spots/ckg-t3-2.jpg",
+    "credit": "Juukeihc at English Wikipedia · CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Terminal_3_of_Chongqing_Jiangbei_Airport.jpg"
+   },
+   {
+    "src": "spots/ckg-t3-3.jpg",
+    "credit": "Azylber · CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Chongqing_Rail_Transit_-_Jiangbei_Airport_-_Exit_3.JPG"
+   }
+  ]
+ },
+ "hotel-cq": {
+  "name": "오우첸 스카이라이즈 리버사이드 호텔 (래플스 시티 충칭)",
+  "localName": "重庆欧辰高空江景酒店(解放碑来福士广场)",
+  "address": "重庆市渝中区新华路1号光大控股朝天门中心21楼",
+  "summary": "두 강이 만나는 차오톈먼, 래플스 시티 단지 안 고층 호텔. 래플스 시티는 사프디 아키텍츠가 설계했고, 250m 높이에 300m 길이의 수평 스카이브리지 '더 크리스털'이 4개 타워를 잇습니다.",
+  "info": [
+   {
+    "label": "숙박",
+    "value": "11/18–11/20 2박 · 시티뷰 복층 퀸룸 2실 + 혼합 전망 2실"
+   },
+   {
+    "label": "크리스털 전망대",
+    "value": "고속 엘리베이터로 47층 · 유리 바닥 · 270° 두 강 전망 (요금 · 시간은 공식 사이트 확인)"
+   },
+   {
+    "label": "주변",
+    "value": "홍야동 도보 약 15분 · 해방비 도보권"
+   }
+  ],
+  "good": [
+   "래플스 시티 전망대 후기: '두 강 합류 파노라마가 압도적'(리뷰 평점 4.6)",
+   "고층 리버뷰 · 차오톈먼 광장과 바로 연결"
+  ],
+  "caution": [
+   "단지가 커서 호텔 로비 층(21층) 찾기가 헷갈릴 수 있음 · 택시엔 중국어 주소 보여주기"
+  ],
+  "sources": [
+   {
+    "label": "Dezeen · The Crystal",
+    "url": "https://www.dezeen.com/2020/06/25/safdie-architects-the-crystal-raffles-city-chongqing-architecture/amp/"
+   },
+   {
+    "label": "CapitaLand 전망대 개장",
+    "url": "https://www.capitaland.com/en/about-capitaland/newsroom/news-releases/international/2020/jun/CapitaLand-opens-250-metre-high-glass-bottom-Exploration-Deck-at-RCCQ.html"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/hotel-cq-1.jpg",
+    "credit": "Junyi Lou · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Raffles_City_Chongqing_2019-9.jpg"
+   },
+   {
+    "src": "spots/hotel-cq-2.jpg",
+    "credit": "Suicasmo · CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Raffles_City_Chongqing_20260507-1.jpg"
+   },
+   {
+    "src": "spots/hotel-cq-3.jpg",
+    "credit": "Junyi Lou · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Raffles_City_Chongqing_2019-2.jpg"
+   },
+   {
+    "src": "spots/hotel-cq-4.jpg",
+    "credit": "Suicasmo · CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Raffles_City_Chongqing_20260507-2.jpg"
+   }
+  ]
+ },
+ "xiuniang": {
+  "name": "린장먼 시우냥 촨촨샹 (본점)",
+  "localName": "临江门秀嬢串串香(重庆总店)",
+  "address": "重庆市渝中区临江路1号3层附2号商铺",
+  "summary": "꼬치를 끓는 마라 탕에 담가 먹는 충칭식 꼬치 훠궈 '촨촨샹'. 먹은 꼬치 막대 개수로 계산합니다.",
+  "info": [
+   {
+    "label": "영업",
+    "value": "11:00–23:30"
+   },
+   {
+    "label": "가는 법",
+    "value": "지하철 2호선 린장먼역 지하통로 B7 출구 도보 약 250m"
+   },
+   {
+    "label": "주문",
+    "value": "냉장고에서 꼬치를 골라 담고 탕 맵기 선택 → 막대 개수로 계산"
+   }
+  ],
+  "good": [
+   "꼬치 단위라 4명이 여러 가지를 조금씩 맛보기 좋음",
+   "호텔 · 홍야동과 가까워 첫날 저녁 동선이 짧음"
+  ],
+  "caution": [
+   "맵기는 '웨이라(微辣 · 약간 매움)'로 · 기본도 한국 불닭 이상",
+   "온라인 리뷰는 확인하지 못해 가게 기본 정보 위주로 정리했어요 · 저녁 피크엔 대기 가능"
+  ],
+  "sources": [],
+  "photos": [
+   {
+    "src": "spots/xiuniang-1.jpg",
+    "credit": "❤的方向 · CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E5%85%AD%E5%A9%86%E4%B8%B2%E4%B8%B2%E9%A6%99_-_panoramio.jpg"
+   },
+   {
+    "src": "spots/xiuniang-2.jpg",
+    "credit": "❤的方向 · CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E5%A4%A9%E5%BA%9C%E4%B8%B2%E6%A0%B9%E9%A6%99_-_panoramio.jpg"
+   }
+  ],
+  "photoNote": "촨촨샹 참고 사진 (해당 가게 아님)"
+ },
+ "hongyadong": {
+  "name": "홍야동 (洪崖洞) & 천사문 대교",
+  "localName": "洪崖洞民俗风貌区",
+  "address": "重庆市渝中区嘉陵江滨江路88号",
+  "summary": "가릉강 절벽에 11층으로 쌓은 조각루(吊脚楼). 1층과 11층이 각각 다른 도로와 이어지는 충칭 입체 도시의 상징입니다.",
+  "info": [
+   {
+    "label": "점등",
+    "value": "대략 19:30–23:00 (시기별 변동)"
+   },
+   {
+    "label": "소요",
+    "value": "1시간 ~ 1시간 30분"
+   },
+   {
+    "label": "요금",
+    "value": "무료"
+   }
+  ],
+  "good": [
+   "리뷰 공통: '야경은 꼭 밤에' · 천사문 대교 위에서 내려다보는 각도가 최고 사진 스팟",
+   "강 건너 장베이쭈이(江北嘴) 쪽에서 전체를 담는 뷰도 추천"
+  ],
+  "caution": [
+   "1층 지상은 항상 붐빔 · 다리 위나 강 건너에서 보기",
+   "20시 이후, 평일 21:30 이후가 비교적 한산",
+   "내부 상가는 일반 보행가와 비슷하다는 평 · 엘리베이터 줄 서지 않기"
+  ],
+  "sources": [
+   {
+    "label": "China Highlights · 점등시간·포토스팟",
+    "url": "https://www.chinahighlights.com/chongqing/attraction/hongya-cave.htm"
+   },
+   {
+    "label": "Wanderlog · 천사문 대교",
+    "url": "https://wanderlog.com/place/details/5668147/qiansimen-bridge"
+   },
+   {
+    "label": "Trip.com 가이드",
+    "url": "https://ca.trip.com/travel-guide/attraction/chongqing/hongyadong-commercial-street-10558957?curr=NZD"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/hongyadong-1.jpg",
+    "credit": "Youyiy33 · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Hongyadong_in_Chongqing.jpg"
+   },
+   {
+    "src": "spots/hongyadong-2.jpg",
+    "credit": "Yumeto · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:20250521_Hongyadong_(223216).jpg"
+   },
+   {
+    "src": "spots/hongyadong-3.jpg",
+    "credit": "GeoffLeng · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E9%87%8D%E5%BA%86%E6%B4%AA%E5%B4%96%E6%B4%9E.jpg"
+   },
+   {
+    "src": "spots/hongyadong-4.jpg",
+    "credit": "JamesYoung8167 · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Qiansimen_Jialing_River_Bridge_2020-08-13.jpg"
+   }
+  ]
+ },
+ "xiaomian": {
+  "name": "충칭 소면 (重庆小面)",
+  "localName": "重庆小面",
+  "address": "重庆市渝中区解放碑步行街 附近",
+  "summary": "충칭 사람들의 아침. 고추기름 · 화자오 양념에 비벼 먹는 국수로, 낮은 플라스틱 의자에 앉아 먹는 '길거리 소면'이 정석입니다.",
+  "info": [
+   {
+    "label": "가격",
+    "value": "기본 8~12위안"
+   },
+   {
+    "label": "양",
+    "value": "얼량(二两) 보통 · 싼량(三两) 곱빼기"
+   },
+   {
+    "label": "주문 예",
+    "value": "一碗干馏豌杂, 微辣 (완두 고기고명 비빔, 약간 맵게)"
+   }
+  ],
+  "good": [
+   "해방비 칭녠로의 화스 완자몐(花市豌杂面)이 완두·고기 고명으로 평이 좋음",
+   "'간류(干溜)'는 국물 없는 비빔 · '티황(提黄)'은 꼬들한 면"
+  ],
+  "caution": [
+   "기본이 맵다 · 못 먹으면 '부라(不辣)' 명시",
+   "해방비 본점은 오전에 줄이 길 수 있음"
+  ],
+  "sources": [
+   {
+    "label": "Wander in China · 소면 가이드",
+    "url": "https://wanderinchina.com/en/chinese-food/chongqings-spicy-noodles/"
+   },
+   {
+    "label": "iChongqing · Xiaomian",
+    "url": "https://www.ichongqing.info/2024/05/16/xiaomian-chongqing-spicy-noodles/amp"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/xiaomian-1.jpg",
+    "credit": "王桁霽 · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Chongqing_Xiaomian_with_fried_eggs.jpg"
+   },
+   {
+    "src": "spots/xiaomian-2.jpg",
+    "credit": "Shwangtianyuan · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Spicy_chicken_xiaomian-20250327.jpg"
+   },
+   {
+    "src": "spots/xiaomian-3.jpg",
+    "credit": "瑞丽江的河水 · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E9%87%8D%E5%BA%86%E5%B0%8F%E9%9D%A2_-_2024-05-25.jpg"
+   }
+  ]
+ },
+ "topia": {
+  "name": "토피아 (Topia 해방비점)",
+  "localName": "Topia(解放碑店)",
+  "address": "重庆市渝中区大同路73号",
+  "summary": "해방비 상권에 있는 인기 카페. 소면 아침 뒤 커피 한 잔하고 린장먼역에서 2호선으로 리지바로 이동하는 동선입니다.",
+  "info": [
+   {
+    "label": "영업",
+    "value": "09:00–20:00"
+   },
+   {
+    "label": "가는 법",
+    "value": "2호선 린장먼역 지하통로 B5 출구 도보 약 260m"
+   }
+  ],
+  "good": [
+   "해방비 · 린장먼역과 가까워 오전 동선에 끼우기 좋음"
+  ],
+  "caution": [
+   "온라인 리뷰는 확인하지 못해 가게 기본 정보 위주로 정리했어요"
+  ],
+  "sources": [],
+  "photos": [
+   {
+    "src": "spots/topia-1.jpg",
+    "credit": "HoweyYuan · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Jiefangbei_CBD_20240721.jpg"
+   },
+   {
+    "src": "spots/topia-2.jpg",
+    "credit": "Baycrest · CC BY-SA 2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:Chongqing_Jiefangbei_CBD.jpg"
+   },
+   {
+    "src": "spots/topia-3.jpg",
+    "credit": "xiquinhosilva · CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Jiefangbei_CBD_31323-Chongqing_(45436205655).jpg"
+   }
+  ],
+  "photoNote": "해방비 일대 사진"
+ },
+ "liziba": {
+  "name": "리지바역 (李子坝) 모노레일 관람대",
+  "localName": "李子坝轻轨穿楼观景平台",
+  "address": "重庆市渝中区李子坝正街39号",
+  "summary": "2호선 모노레일이 19층 주거 건물 6~8층을 관통하는 '건물 뚫는 기차'. 길 건너 관람 광장에서 진입 장면을 찍습니다.",
+  "info": [
+   {
+    "label": "소요",
+    "value": "20~30분"
+   },
+   {
+    "label": "요금",
+    "value": "관람대 무료 · 지하철 요금 2~9위안"
+   },
+   {
+    "label": "가는 법",
+    "value": "2호선 리지바역 하차 → 관람대 표지 따라 길 건너편"
+   }
+  ],
+  "good": [
+   "리뷰 공통: '짧고 저렴하게 충칭다움을 보는 곳'",
+   "2~3분 간격으로 열차가 와서 여러 번 촬영 가능",
+   "직접 탑승해 가릉강 뷰를 보는 것도 추천"
+  ],
+  "caution": [
+   "평일 이른 아침이 가장 한산",
+   "베이빈로(北滨路) 쪽은 멀지만 전체 구도가 나옴"
+  ],
+  "sources": [
+   {
+    "label": "China Xian Tour · 리지바",
+    "url": "https://www.chinaxiantour.com/chongqing-travel-guide/liziba-station.html"
+   },
+   {
+    "label": "Trip.com · 리지바",
+    "url": "https://sg.trip.com/guide/attraction/liziba-station.html"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/liziba-1.jpg",
+    "credit": "N509FZ · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Liziba_Station_with_02031_(20191224152311).jpg"
+   },
+   {
+    "src": "spots/liziba-2.jpg",
+    "credit": "Qa003qa003 · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Liziba_Station_20180430_162756.jpg"
+   },
+   {
+    "src": "spots/liziba-3.png",
+    "credit": "David290 · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E6%9D%8E%E5%AD%90%E5%9D%9D%E7%AB%99%E8%BD%BB%E8%BD%A8%E7%A9%BF%E6%A5%BC_0023.png"
+   },
+   {
+    "src": "spots/liziba-4.jpg",
+    "credit": "Qa003qa003 · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Liziba_Station_20180430_164458.jpg"
+   }
+  ]
+ },
+ "eling2": {
+  "name": "에링얼창 문창원 (鹅岭二厂)",
+  "localName": "鹅岭二厂文创公园",
+  "address": "重庆市渝中区鹅岭正街1号",
+  "summary": "1940년대 지폐 인쇄 공장을 개조한 문화창작 단지. 영화 '나의 소녀시대'류 청춘영화(从你的全世界路过) 촬영지로 유명합니다.",
+  "info": [
+   {
+    "label": "소요",
+    "value": "2~3시간"
+   },
+   {
+    "label": "요금",
+    "value": "무료 (일부 전시 유료)"
+   },
+   {
+    "label": "가는 법",
+    "value": "리지바에서 택시 약 10분"
+   }
+  ],
+  "good": [
+   "31동 옥상: 위중 반도 최고점에서 두 강 합류부를 180°로 보는 포토 스팟",
+   "카페 · 소품숍이 많아 오후 티타임에 적합",
+   "옥상 정원 찻집에서 시내 전망"
+  ],
+  "caution": [
+   "해 질 녘 · 야간이 가장 예쁘지만 우리 일정은 낮 방문 · 오후 햇살 각도 활용"
+  ],
+  "sources": [
+   {
+    "label": "China Educational Tours · Eling No.2 Factory",
+    "url": "https://www.chinaeducationaltours.com/guide/chongqing-eling-second-factory.htm"
+   },
+   {
+    "label": "iChongqing",
+    "url": "https://www.ichongqing.info/?p=81982"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/eling2-1.jpg",
+    "credit": "Hugo LUC · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Panorama_of_Chongqing_from_tower_in_Eling_park.jpg"
+   },
+   {
+    "src": "spots/eling2-2.jpg",
+    "credit": "Harveychl · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Panorama_of_Chongqing_at_night_taken_from_Eling_Park.jpeg"
+   },
+   {
+    "src": "spots/eling2-3.jpg",
+    "credit": "Chen Huang · CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E9%B9%85%E5%B2%AD%E5%85%AC%E5%9B%AD_-_Eling_Park_-_2016.03_-_panoramio.jpg"
+   }
+  ],
+  "photoNote": "에링 공원 일대 전망"
+ },
+ "totomato": {
+  "name": "토토마토 (TOTOMATO 다이자샹점) & 다이자샹 절벽 산책로",
+  "localName": "TOTOMATO(戴家巷店)",
+  "address": "重庆市渝中区戴家巷25号2单元1-7号",
+  "summary": "홍야동 옆 절벽 산책로 다이자샹(戴家巷)의 카페. 산책로는 약 750m · 고저차 60m의 Z자 길로 옛 골목과 가릉강변로를 잇습니다(2021년 개통).",
+  "info": [
+   {
+    "label": "카페 영업",
+    "value": "09:00–20:00"
+   },
+   {
+    "label": "위치",
+    "value": "다이자샹 25호 2단원 1-7호 · 순환 액세서리 가게 옆"
+   },
+   {
+    "label": "가는 법",
+    "value": "2호선 린장먼역 1번 출구 도보 약 530m"
+   },
+   {
+    "label": "산책로",
+    "value": "24시간 개방 · 무료"
+   }
+  ],
+  "good": [
+   "산책로에서 장베이쭈이 · 천사문 대교 방향 강 전망이 좋다는 평",
+   "조각루 · 성벽 유적 · 절벽 황거수 등 옛 충칭 분위기"
+  ],
+  "caution": [
+   "카페 자체 온라인 리뷰는 확인하지 못했어요",
+   "계단 · 경사가 많아 편한 신발 필수"
+  ],
+  "sources": [
+   {
+    "label": "Chongqing 정부 · 산책로 소개",
+    "url": "https://english.cq.gov.cn/specials/explore/MountainCityTrails/202608/t20260812_15922239.html"
+   },
+   {
+    "label": "다이자샹 절벽길 여행기",
+    "url": "https://overseatraveller.blogspot.com/2024/09/china-travel-chongqing_1.html"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/totomato-1.jpg",
+    "credit": "瑞丽江的河水 · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E6%88%B4%E5%AE%B6%E5%B7%B7_-_%E5%B7%B7%E9%81%93_-_2024-10-07_01.jpg"
+   },
+   {
+    "src": "spots/totomato-2.jpg",
+    "credit": "瑞丽江的河水 · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E6%88%B4%E5%AE%B6%E5%B7%B7_-_%E5%B7%B7%E9%81%93_-_2024-10-07_03.jpg"
+   },
+   {
+    "src": "spots/totomato-3.jpg",
+    "credit": "瑞丽江的河水 · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E6%88%B4%E5%AE%B6%E5%B7%B7_-_135%E5%8F%B7_-_2024-10-07.jpg"
+   },
+   {
+    "src": "spots/totomato-4.jpg",
+    "credit": "瑞丽江的河水 · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E6%88%B4%E5%AE%B6%E5%B7%B7_-_8%E5%8F%B7_-_2024-10-07.jpg"
+   }
+  ],
+  "photoNote": "다이자샹 골목 사진"
+ },
+ "pipayuan": {
+  "name": "비파원 식위선 훠궈 (枇杷园食为鲜火锅)",
+  "localName": "枇杷园食为鲜火锅",
+  "address": "重庆市南岸区黄桷渡136号(重庆游乐园)",
+  "summary": "남산 자락의 신선 훠궈집. 식사 후 남산 일과수 전망대 야경으로 이어지는 동선입니다.",
+  "info": [
+   {
+    "label": "평점",
+    "value": "구글 4.2 (65개 리뷰)"
+   },
+   {
+    "label": "가격",
+    "value": "1인 ¥100–150"
+   },
+   {
+    "label": "가는 법",
+    "value": "해방비에서 택시 약 25~30분"
+   }
+  ],
+  "good": [
+   "구글 평점 4.2 · 1인 ¥100–150로 남산 훠궈치고 합리적인 가격대"
+  ],
+  "caution": [
+   "리뷰 본문은 확인하지 못해 평점 · 가격 위주로 정리했어요",
+   "200위안 넘으면 알리페이 분할 결제(AA)로 수수료 절약"
+  ],
+  "sources": [],
+  "photos": [
+   {
+    "src": "spots/pipayuan-1.jpg",
+    "credit": "N509FZ · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:3x3_hot_pot_in_Chongqing_(20180217161707).jpg"
+   },
+   {
+    "src": "spots/pipayuan-2.jpg",
+    "credit": "N509FZ · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Concentric_hot_pot_in_Chongqing_(20180217165607).jpg"
+   },
+   {
+    "src": "spots/pipayuan-3.jpg",
+    "credit": "Zhou Guanhuai · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Chongqing_Hot_Pot.jpg"
+   }
+  ],
+  "photoNote": "충칭 훠궈 참고 사진 (해당 가게 아님)"
+ },
+ "yikeshu": {
+  "name": "남산 일과수 전망대 (一棵树观景台)",
+  "localName": "南山一棵树观景台",
+  "address": "重庆市南岸区南山 一棵树观景台",
+  "summary": "남산 위에서 위중 반도와 두 강 합류부 불빛을 내려다보는 충칭 대표 야경 포인트. '2024 아시아 야경 명소 100' 선정.",
+  "info": [
+   {
+    "label": "개방",
+    "value": "09:00–22:30 (22:30 입장 마감)"
+   },
+   {
+    "label": "평점",
+    "value": "트립닷컴 4.3 (1,691개 리뷰)"
+   },
+   {
+    "label": "요금",
+    "value": "소액 유료 (출처마다 상이 · 현장 확인)"
+   }
+  ],
+  "good": [
+   "리뷰 공통: 위중 반도 · 두 강의 불빛 바다를 한눈에",
+   "엘리베이터로 최상층 전망대까지 이동 가능"
+  ],
+  "caution": [
+   "전망대가 넓지 않음 · 좋은 자리는 일찍",
+   "산 위라 밤엔 쌀쌀 · 겉옷 챙기기"
+  ],
+  "sources": [
+   {
+    "label": "Ctrip · 一棵树观景台",
+    "url": "https://gs.ctrip.com/html5/you/sight/chongqing158/45792.html"
+   },
+   {
+    "label": "大河票务 · 개방시간",
+    "url": "https://www.dahepiao.com/lvyounews1/20221226341382.html"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/yikeshu-1.jpg",
+    "credit": "Jonipoon · CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Chongqing_Night_Yuzhong.jpg"
+   },
+   {
+    "src": "spots/yikeshu-2.jpg",
+    "credit": "Harveychl · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Panorama_of_Chongqing_at_night_taken_from_Eling_Park.jpeg"
+   },
+   {
+    "src": "spots/yikeshu-3.jpg",
+    "credit": "Youyiy33 · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Hongyadong_in_Chongqing.jpg"
+   }
+  ],
+  "photoNote": "충칭 야경 사진"
+ },
+ "shapingba": {
+  "name": "사핑바역 (沙坪坝站)",
+  "localName": "沙坪坝站",
+  "address": "重庆市沙坪坝区沙坪坝站",
+  "summary": "충칭 서부 고속철 역. 역 위에 대형 쇼핑몰(룽후 광녠)이 올라간 복합 역사입니다.",
+  "info": [
+   {
+    "label": "열차",
+    "value": "10:30 출발 → 청두동 11:32 (1시간 2분)"
+   },
+   {
+    "label": "도착",
+    "value": "출발 35분 전 · 실물 여권으로 개찰"
+   },
+   {
+    "label": "이동",
+    "value": "해방비에서 택시 약 30분"
+   }
+  ],
+  "good": [
+   "쇼핑몰 일체형이라 대기 중 식음료 이용이 편함"
+  ],
+  "caution": [
+   "보안검색 · 여권 확인 줄을 고려해 여유 있게",
+   "택시 하차 지점은 '高铁站 进站口(고속철 진입구)'라고 말하기"
+  ],
+  "sources": [],
+  "photos": [
+   {
+    "src": "spots/shapingba-1.jpg",
+    "credit": "N509FZ · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:North_fa%C3%A7ade_of_Shapingba_Railway_Station_(20180217105430).jpg"
+   },
+   {
+    "src": "spots/shapingba-2.jpg",
+    "credit": "Junyi Lou · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Shapingba_Railway_Station_and_Longfor_Guangnian.jpg"
+   },
+   {
+    "src": "spots/shapingba-3.jpg",
+    "credit": "Junyi Lou · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:201901_Shapingba_Railway_Station.jpg"
+   }
+  ]
+ },
+ "crh": {
+  "name": "충칭 → 청두 고속철 & 청두동역",
+  "localName": "成都东站",
+  "address": "四川省成都市成华区成都东站",
+  "summary": "시속 300km급 고속철로 쓰촨 분지를 1시간 만에 가로지릅니다. 청두동역은 청두 최대 철도역입니다.",
+  "info": [
+   {
+    "label": "도착",
+    "value": "청두동 11:32"
+   },
+   {
+    "label": "시내까지",
+    "value": "춘시루 호텔까지 택시 약 25분 · 지하철 2호선 춘시루역"
+   }
+  ],
+  "good": [
+   "종이표 없이 여권으로 개찰 · 좌석 번호는 예약 확인 화면에"
+  ],
+  "caution": [
+   "도착 후 택시 승강장 줄이 길면 지하철 2호선 이용"
+  ],
+  "sources": [],
+  "photos": [
+   {
+    "src": "spots/crh-1.jpg",
+    "credit": "TowerCard · CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Chengdu_East_Railway_Station_2011-05-08.jpg"
+   },
+   {
+    "src": "spots/crh-2.jpg",
+    "credit": "Asuracd · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Concourse_of_Chengdu_East_Railway_Station01.jpg"
+   },
+   {
+    "src": "spots/crh-3.jpg",
+    "credit": "Asuracd · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Platform_of_Chengdu_East_Railway_Station02.jpg"
+   }
+  ]
+ },
+ "hotel-cd": {
+  "name": "파크 인 바이 라디슨 청두 춘시루 타이쿠리",
+  "localName": "成都春熙路太古里丽柏酒店",
+  "address": "四川省成都市锦江区总府路57号",
+  "summary": "2025년 오픈. 춘시루 보행가와 타이쿠리(太古里)가 도보권입니다. 타이쿠리는 1,600년 역사의 다츠쓰(大慈寺) 옆 저층 개방형 쇼핑 지구입니다.",
+  "info": [
+   {
+    "label": "숙박",
+    "value": "11/20–11/22 2박 · 부티크 퀸룸 4실"
+   },
+   {
+    "label": "주변",
+    "value": "지하철 2·3호선 춘시루역 · IFS '벽 타는 판다' 조형물"
+   },
+   {
+    "label": "상점",
+    "value": "대체로 10:00–22:00"
+   }
+  ],
+  "good": [
+   "타이쿠리는 무료 산책 · 다츠쓰 주변 '슬로우 존'에 레스토랑 · 문화 브랜드",
+   "춘시루는 넓고 평탄한 보행가라 걷기 편함",
+   "근처에서 훠궈 소스(재료) 기념품 구입 가능"
+  ],
+  "caution": [
+   "다츠쓰 내부는 별도 개방시간",
+   "주말 저녁은 매우 붐빔"
+  ],
+  "sources": [
+   {
+    "label": "China Highlights · 청두 쇼핑",
+    "url": "https://www.chinahighlights.com/chengdu/article-shopping-street.htm"
+   },
+   {
+    "label": "Nomado · 춘시루",
+    "url": "https://www.nomadotravel.app/en/attractions/chunxi-road"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/hotel-cd-1.jpg",
+    "credit": "EditQ · CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sino-Ocean_Taikoo_Li_Chengdu_9.jpg"
+   },
+   {
+    "src": "spots/hotel-cd-2.jpg",
+    "credit": "EditQ · CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sino-Ocean_Taikoo_Li_Chengdu_1.jpg"
+   },
+   {
+    "src": "spots/hotel-cd-3.jpg",
+    "credit": "EditQ · CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sino-Ocean_Taikoo_Li_Chengdu_2.jpg"
+   },
+   {
+    "src": "spots/hotel-cd-4.jpg",
+    "credit": "EditQ · CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sino-Ocean_Taikoo_Li_Chengdu_12.jpg"
+   }
+  ],
+  "photoNote": "타이쿠리 사진"
+ },
+ "wansan": {
+  "name": "만산면관 (万三面馆 칭룽정제점)",
+  "localName": "万三面馆(青龙正街)",
+  "address": "成都市锦江区青龙正街131号附1号",
+  "summary": "미쉐린 빕 구르망 면집. 이빈(宜宾)식 '란몐(燃面)'과 라러우(腊肉)가 간판 메뉴입니다.",
+  "info": [
+   {
+    "label": "등급",
+    "value": "미쉐린 빕 구르망 · ¥"
+   },
+   {
+    "label": "메뉴",
+    "value": "란몐: 땅콩 · 쪽파 · 야차이(芽菜)를 기름에 비벼 먹는 비빔면"
+   },
+   {
+    "label": "이동",
+    "value": "호텔에서 택시 약 10분"
+   }
+  ],
+  "good": [
+   "미쉐린 평: 이빈식 정통 맛 · 면과 훈제 고기 조합"
+  ],
+  "caution": [
+   "광둥식 소시지 외 구이 · 훈제류는 18시부터 제공 (점심엔 면 위주)",
+   "영업시간은 방문 전 다중뎬핑에서 확인"
+  ],
+  "sources": [
+   {
+    "label": "Michelin Guide",
+    "url": "https://guide.michelin.com/en/chengdu-municipality/chengdu/restaurant/wan-san-mian-guan-jinjiang"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/wansan-1.jpg",
+    "credit": "N509FZ · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Ranmian_at_Beijing_Yibin_Hostel_(20210401111937).jpg"
+   },
+   {
+    "src": "spots/wansan-2.jpg",
+    "credit": "N509FZ · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Ranmian_with_minced_pork_at_Beijing_Yibin_Hostel_(20210401112120).jpg"
+   },
+   {
+    "src": "spots/wansan-3.jpg",
+    "credit": "Suginami · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E7%87%83%E9%9D%A2.jpg"
+   }
+  ],
+  "photoNote": "란몐 참고 사진 (해당 가게 아님)"
+ },
+ "shuijingfang": {
+  "name": "수정방 박물관 (水井坊博物馆)",
+  "localName": "水井坊博物馆",
+  "address": "四川省成都市锦江区水井街 水井坊博物馆",
+  "summary": "원나라 말기부터 600년 넘게 쓰인 백주 양조장 유적. 지금도 발효 구덩이(窖池)에서 술을 빚습니다.",
+  "info": [
+   {
+    "label": "개관",
+    "value": "09:00–17:30 (공식 채널 확인)"
+   },
+   {
+    "label": "요금",
+    "value": "약 ¥50부터 (시음 포함 여부 확인)"
+   },
+   {
+    "label": "소요",
+    "value": "1시간 30분 ~ 2시간 30분"
+   }
+  ],
+  "good": [
+   "리뷰: 시음 · 페어링 체험이 인상적",
+   "양조 공정 · 고대 발효조를 실제로 볼 수 있음"
+  ],
+  "caution": [
+   "시음 · 숍 둘러볼 시간 여유 있게",
+   "예약 방식은 위챗 공식 계정 등에서 사전 확인"
+  ],
+  "sources": [
+   {
+    "label": "Offpeaktrip · 수정방 박물관",
+    "url": "https://offpeaktrip.com/en/guide/chengdu/shuijingfang-museum"
+   },
+   {
+    "label": "Chinatripedia",
+    "url": "https://chinatripedia.com/?p=5986"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/shuijingfang-1.jpg",
+    "credit": "xiquinhosilva · CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Shujingfang_Museum.jpg"
+   },
+   {
+    "src": "spots/shuijingfang-2.jpg",
+    "credit": "xiquinhosilva · CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Shujingfang_Museum_-_55457599340.jpg"
+   },
+   {
+    "src": "spots/shuijingfang-3.jpg",
+    "credit": "xiquinhosilva · CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Shujingfang_Museum_-_55456220962.jpg"
+   },
+   {
+    "src": "spots/shuijingfang-4.jpg",
+    "credit": "xiquinhosilva · CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Shujingfang_Museum_-_55457208716.jpg"
+   }
+  ]
+ },
+ "chenmapo": {
+  "name": "진마파두부 (陈麻婆豆腐 칭화로점)",
+  "localName": "陈麻婆豆腐(青华路店)",
+  "address": "成都市青羊区青华路10号附10-12号",
+  "summary": "마파두부를 처음 만든 '천 할머니(陈麻婆)'의 100년 넘은 노포. 미쉐린 빕 구르망입니다.",
+  "info": [
+   {
+    "label": "등급",
+    "value": "미쉐린 빕 구르망 · ¥ (가성비)"
+   },
+   {
+    "label": "예약",
+    "value": "미쉐린 사이트 예약 불가 · 워크인"
+   },
+   {
+    "label": "이동",
+    "value": "식사 후 금리까지 택시 약 15분"
+   }
+  ],
+  "good": [
+   "미쉐린: '마라 마파두부의 진짜 원조로 알려진 곳'",
+   "가격 부담이 적은 ¥ 등급"
+  ],
+  "caution": [
+   "점심 · 이른 저녁이 대기가 짧음",
+   "원조 · 본점 여부는 매장마다 주장이 다름"
+  ],
+  "sources": [
+   {
+    "label": "Michelin Guide",
+    "url": "https://guide.michelin.com/en/chengdu-municipality/chengdu/restaurant/chen-mapo-tofu-qinghua-road"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/chenmapo-1.jpg",
+    "credit": "Sichuanfoodlover · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Authentic_Mapo_Tofu.jpg"
+   },
+   {
+    "src": "spots/chenmapo-2.jpg",
+    "credit": "ZhengZhou · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Chen_Mapo_Tofu.jpg"
+   },
+   {
+    "src": "spots/chenmapo-3.jpg",
+    "credit": "NeoBatfreak · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Mapo_Tofu_with_rice.jpg"
+   }
+  ],
+  "photoNote": "마파두부 참고 사진"
+ },
+ "jinli": {
+  "name": "금리 고거리 (锦里)",
+  "localName": "锦里古街",
+  "address": "四川省成都市武侯区武侯祠大街231号",
+  "summary": "무후사(武侯祠) 옆 삼국지 촉나라 분위기의 옛 거리. 밤이면 홍등이 켜집니다.",
+  "info": [
+   {
+    "label": "추천 시간",
+    "value": "19시 전후 · 홍등은 켜지고 인파는 덜함"
+   },
+   {
+    "label": "상점",
+    "value": "간식 노점은 22시 전후 마감 · 바는 늦게까지"
+   },
+   {
+    "label": "요금",
+    "value": "무료"
+   }
+  ],
+  "good": [
+   "홍등 야경이 아름답다는 평 · 황룽츠(黄龙池) 돌다리 앞이 사진 명소",
+   "용초수(龙抄手 · 완탕) 등 간식 거리"
+  ],
+  "caution": [
+   "공휴일 · 주말 밤은 매우 붐빔 · 22시 이후 한산",
+   "상업화된 거리라는 평도 있음"
+  ],
+  "sources": [
+   {
+    "label": "China Highlights · 금리",
+    "url": "https://www.chinahighlights.com/chengdu/attraction/jinli-old-street.htm"
+   },
+   {
+    "label": "Wander in China · 금리",
+    "url": "https://www.wanderinchina.com/en/destinations/chengdu/jinli-ancient-street/"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/jinli-1.jpg",
+    "credit": "Zairon · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Chengdu_Jinli-Stra%C3%9Fe_11.jpg"
+   },
+   {
+    "src": "spots/jinli-2.jpg",
+    "credit": "Daderot · CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Jinli_Street_-_Chengdu,_China_-_DSC05404.jpg"
+   },
+   {
+    "src": "spots/jinli-3.jpg",
+    "credit": "Daderot · CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Jinli_Street_-_Chengdu,_China_-_DSC05399.jpg"
+   },
+   {
+    "src": "spots/jinli-4.jpg",
+    "credit": "Zairon · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Chengdu_Jinli-Stra%C3%9Fe_09.jpg"
+   }
+  ]
+ },
+ "jiezi": {
+  "name": "제쯔구전 (街子古镇)",
+  "localName": "街子古镇",
+  "address": "四川省成都市崇州市街子古镇",
+  "summary": "칭청산 뒤편 웨이장 강(味江)을 낀 천년 물마을. 대나무 의자 찻집에서 쉬어 가는 곳입니다.",
+  "info": [
+   {
+    "label": "이동",
+    "value": "시내에서 차로 약 1시간~1시간 30분"
+   },
+   {
+    "label": "평점",
+    "value": "트립닷컴 4.4 (78개 리뷰)"
+   },
+   {
+    "label": "특산",
+    "value": "탕마빙(汤麻饼) · 충저우 비파차(枇杷茶)"
+   }
+  ],
+  "good": [
+   "관광객이 적고 조용하다는 평",
+   "강가 찻집에서 보온병 뜨거운 물 무제한"
+  ],
+  "caution": [
+   "평일 오전이 가장 한산",
+   "찻집 개별 리뷰는 확인하지 못했어요"
+  ],
+  "sources": [
+   {
+    "label": "China Highlights · 청두 고진",
+    "url": "https://www.chinahighlights.com/chengdu/article-best-ancient-town.htm"
+   },
+   {
+    "label": "Trip.com · 제쯔구전",
+    "url": "https://nz.trip.com/travel-guide/chongzhou/jiezi-ancient-town-90182/"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/jiezi-1.jpg",
+    "credit": "Xiumuzidiao · CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E8%A1%97%E5%AD%90%E5%8F%A4%E9%95%87%EF%BC%88%E5%B4%87%E5%B7%9E%E5%B8%82%EF%BC%89.jpg"
+   },
+   {
+    "src": "spots/jiezi-2.jpg",
+    "credit": "Xiumuzidiao · CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E8%A1%97%E5%AD%90%E5%8F%A4%E9%95%87%E8%A1%97%E9%81%9301.jpg"
+   },
+   {
+    "src": "spots/jiezi-3.jpg",
+    "credit": "Xiumuzidiao · CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E8%A1%97%E5%AD%90%E5%8F%A4%E9%95%87%E8%A1%97%E9%81%9302.jpg"
+   },
+   {
+    "src": "spots/jiezi-4.jpg",
+    "credit": "Xiumuzidiao · CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E8%A1%97%E5%AD%90%E5%8F%A4%E9%95%87%E9%93%9C%E5%83%8F.jpg"
+   }
+  ]
+ },
+ "jiezi-lunch": {
+  "name": "제쯔구전 시골 점심",
+  "localName": "街子古镇",
+  "address": "四川省成都市崇州市街子古镇",
+  "summary": "고진 안 식당에서 촌두부 · 토종닭 · 산나물로 소박한 점심. 디저트로 탕마빙을 곁들입니다.",
+  "info": [
+   {
+    "label": "이동",
+    "value": "시내에서 차로 약 1시간~1시간 30분"
+   },
+   {
+    "label": "평점",
+    "value": "트립닷컴 4.4 (78개 리뷰)"
+   },
+   {
+    "label": "특산",
+    "value": "탕마빙(汤麻饼) · 충저우 비파차(枇杷茶)"
+   }
+  ],
+  "good": [
+   "고진 특산 탕마빙 · 산나물 요리"
+  ],
+  "caution": [
+   "식당별 리뷰는 확인하지 못했어요 · 메뉴판 가격 먼저 확인"
+  ],
+  "sources": [
+   {
+    "label": "China Highlights · 청두 고진",
+    "url": "https://www.chinahighlights.com/chengdu/article-best-ancient-town.htm"
+   },
+   {
+    "label": "Trip.com · 제쯔구전",
+    "url": "https://nz.trip.com/travel-guide/chongzhou/jiezi-ancient-town-90182/"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/jiezi-lunch-1.jpg",
+    "credit": "Xiumuzidiao · CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E8%A1%97%E5%AD%90%E5%8F%A4%E9%95%87%E8%A1%97%E9%81%9301.jpg"
+   },
+   {
+    "src": "spots/jiezi-lunch-2.jpg",
+    "credit": "Xiumuzidiao · CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E8%A1%97%E5%AD%90%E5%8F%A4%E9%95%87%E8%A1%97%E9%81%9302.jpg"
+   }
+  ]
+ },
+ "woos": {
+  "name": "오씨회 (吴氏荟 The Woo's)",
+  "localName": "吴氏荟",
+  "address": "成都市锦江区宏济中路39号附17号",
+  "summary": "큰 나무에 가려진 고택에서 오(吴)씨 가족이 운영하는 사천요리집. 미쉐린 빕 구르망입니다.",
+  "info": [
+   {
+    "label": "등급",
+    "value": "미쉐린 빕 구르망 · ¥¥"
+   },
+   {
+    "label": "전화",
+    "value": "+86 28 6527 2678"
+   },
+   {
+    "label": "결제",
+    "value": "해외 신용카드 불가 · 알리페이 · 현금"
+   }
+  ],
+  "good": [
+   "미쉐린 추천: 마른 고추 더미에 튀긴 자연산 황조기",
+   "흐르는 소를 넣은 찹쌀 경단 디저트"
+  ],
+  "caution": [
+   "건물이 큰 나무에 가려 찾기 어려움 · 택시엔 중국어 주소",
+   "4인 이상이면 전화 예약 권장"
+  ],
+  "sources": [
+   {
+    "label": "Michelin Guide",
+    "url": "https://guide.michelin.com/en/chengdu-municipality/chengdu/restaurant/the-woo-s"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/woos-1.jpg",
+    "credit": "Clément Bucco-Lechat · CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sichuan_food.JPG"
+   },
+   {
+    "src": "spots/woos-2.jpg",
+    "credit": "Coolli22 · CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sichuan_cuisine_Bo-bo_chicken.jpg"
+   },
+   {
+    "src": "spots/woos-3.jpg",
+    "credit": "KittyKaht from Hong Kong, Hong Kong · CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Discovering_Sichuan_cuisine.jpg"
+   }
+  ],
+  "photoNote": "사천요리 참고 사진 (해당 가게 아님)"
+ },
+ "tfu": {
+  "name": "청두 톈푸 국제공항 T1",
+  "localName": "成都天府国际机场T1航站楼",
+  "address": "四川省成都市简阳市成都天府国际机场T1航站楼",
+  "summary": "2021년 개항한 청두 신공항. 시내에서 약 50~60km 떨어져 있어 이른 아침 출발은 여유 있게 움직여야 합니다.",
+  "info": [
+   {
+    "label": "항공편",
+    "value": "CA401 08:30 출발 → 인천 12:55"
+   },
+   {
+    "label": "시내에서",
+    "value": "택시 약 1시간 · 지하철 18호선 40분대(첫차 06:00 전후)"
+   },
+   {
+    "label": "도착 목표",
+    "value": "출발 2시간 전 06:30"
+   }
+  ],
+  "good": [
+   "신공항이라 넓고 쾌적 · T1 에어차이나 라운지에 사천 음식 뷔페"
+  ],
+  "caution": [
+   "터미널 배정은 출처마다 다름 · 전자티켓에서 T1 재확인",
+   "05:40 출발이면 지하철 첫차 전 · 택시/디디 예약"
+  ],
+  "sources": [
+   {
+    "label": "Wander in China · 청두 공항",
+    "url": "https://wanderinchina.com/destinations/chengdu/transport/airport/"
+   },
+   {
+    "label": "Trip.com · 청두 공항",
+    "url": "https://uk.trip.com/guide/china/chengdu-airport.html"
+   }
+  ],
+  "photos": [
+   {
+    "src": "spots/tfu-1.jpg",
+    "credit": "FATIII Aviation · CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E6%88%90%E9%83%BD%E5%A4%A9%E5%BA%9C%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA_Chengdu_Tianfu_International_Airport_1.jpg"
+   },
+   {
+    "src": "spots/tfu-2.jpg",
+    "credit": "FATIII Aviation · CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E6%88%90%E9%83%BD%E5%A4%A9%E5%BA%9C%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA_Chengdu_Tianfu_International_Airport_2.jpg"
+   },
+   {
+    "src": "spots/tfu-3.jpg",
+    "credit": "FATIII Aviation · CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E6%88%90%E9%83%BD%E5%A4%A9%E5%BA%9C%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA_Chengdu_Tianfu_International_Airport_4.jpg"
+   }
+  ]
+ }
+}

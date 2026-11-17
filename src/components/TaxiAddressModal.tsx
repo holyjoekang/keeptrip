@@ -1,6 +1,7 @@
 import React from 'react';
-import { X, Volume2, Car, Copy, Check } from 'lucide-react';
+import { X, Car, Copy, Check } from 'lucide-react';
 import { ItineraryStop, DestinationType } from '../types/travel';
+import { getTaxiAddress } from '../utils/spotGuide';
 
 interface TaxiAddressModalProps {
   isOpen: boolean;
@@ -21,7 +22,8 @@ export const TaxiAddressModal: React.FC<TaxiAddressModalProps> = ({
 
   const isChina = destinationType === 'CN';
 
-  const localName = spot.localName ?? (isChina
+  const taxi = getTaxiAddress(spot);
+  const localName = taxi.localName ?? (isChina
     ? (spot.title.includes('수정방')
         ? '水井坊博物馆'
         : spot.title.includes('홍야동')
@@ -33,7 +35,7 @@ export const TaxiAddressModal: React.FC<TaxiAddressModalProps> = ({
         : spot.title)
     : spot.title);
 
-  const addressDetails = spot.address ?? (isChina
+  const addressDetails = taxi.address ?? (isChina
     ? (spot.title.includes('수정방')
         ? '四川省成都市锦江区水井街19号'
         : spot.title.includes('홍야동')
@@ -53,19 +55,6 @@ export const TaxiAddressModal: React.FC<TaxiAddressModalProps> = ({
         : spot.title.includes('두리치')
         ? 'Durich Durian, Jalan Petaling, Chinatown, Kuala Lumpur'
         : `${spot.title}`));
-
-  const handleSpeakDriver = () => {
-    if (!window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-    const text = isChina
-      ? `师傅，请带我去 ${localName}`
-      : destinationType === 'MY' ? `Tolong hantar saya ke ${localName}`
-      : destinationType === 'KR' ? `기사님, ${localName}으로 가 주세요`
-      : `Please take me to ${localName}`;
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = isChina ? 'zh-CN' : destinationType === 'KR' ? 'ko-KR' : 'en-US';
-    window.speechSynthesis.speak(utterance);
-  };
 
   const handleCopy = () => {
     navigator.clipboard.writeText(addressDetails);
@@ -108,15 +97,7 @@ export const TaxiAddressModal: React.FC<TaxiAddressModalProps> = ({
         </div>
 
         {/* Helper Action Buttons */}
-        <div className="grid grid-cols-2 gap-2 pt-1">
-          <button
-            type="button"
-            onClick={handleSpeakDriver}
-            className="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs flex items-center justify-center gap-1.5 transition-colors"
-          >
-            <Volume2 className="w-4 h-4 text-[#1E2856]" />
-            <span>기사님께 음성 들려주기</span>
-          </button>
+        <div className="grid grid-cols-1 gap-2 pt-1">
 
           <button
             type="button"
