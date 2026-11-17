@@ -20,6 +20,8 @@ export interface ItineraryStop {
   smartTip?: string;
   docent?: DocentInfo;
   isRecommended?: boolean;
+  localName?: string; // 택시 기사에게 보여줄 현지어 이름
+  address?: string; // 현지어 주소
 }
 
 export interface DayPlan {

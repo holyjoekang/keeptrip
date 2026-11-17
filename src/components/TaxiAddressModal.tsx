@@ -21,7 +21,7 @@ export const TaxiAddressModal: React.FC<TaxiAddressModalProps> = ({
 
   const isChina = destinationType === 'CN';
 
-  const localName = isChina
+  const localName = spot.localName ?? (isChina
     ? (spot.title.includes('수정방')
         ? '水井坊博物馆'
         : spot.title.includes('홍야동')
@@ -31,9 +31,9 @@ export const TaxiAddressModal: React.FC<TaxiAddressModalProps> = ({
         : spot.title.includes('제쯔구전')
         ? '街子古镇'
         : spot.title)
-    : spot.title;
+    : spot.title);
 
-  const addressDetails = isChina
+  const addressDetails = spot.address ?? (isChina
     ? (spot.title.includes('수정방')
         ? '四川省成都市锦江区水井街19号'
         : spot.title.includes('홍야동')
@@ -52,7 +52,7 @@ export const TaxiAddressModal: React.FC<TaxiAddressModalProps> = ({
         ? 'Batu Caves, Gombak, 68100 Batu Caves, Selangor'
         : spot.title.includes('두리치')
         ? 'Durich Durian, Jalan Petaling, Chinatown, Kuala Lumpur'
-        : `${spot.title}`);
+        : `${spot.title}`));
 
   const handleSpeakDriver = () => {
     if (!window.speechSynthesis) return;
