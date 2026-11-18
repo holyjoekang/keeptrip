@@ -11,7 +11,7 @@ import { flushPackingOutbox } from './lib/db';
 createRoot(document.getElementById('root')!).render(<><OfflineStatus /><App /></>);
 
 // 오프라인 앱: 빌드 결과(dist/sw.js)를 등록해 앱·사진·일정 데이터를 기기에 저장
-if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+if (import.meta.env.PROD && 'serviceWorker' in navigator && location.protocol.startsWith('http')) {
   window.addEventListener('load', () => {
     const first = !navigator.serviceWorker.controller;
     navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).then((reg) => {

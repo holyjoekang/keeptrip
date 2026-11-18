@@ -26,4 +26,5 @@ export const getTaxiAddress = (stop: ItineraryStop | null) => {
   return { localName: stop?.localName ?? g?.localName, address: stop?.address ?? g?.address };
 };
 
-export const photoUrl = (src: string) => `${import.meta.env.BASE_URL}${src}`;
+export const photoUrl = (src: string) =>
+  ((window as unknown as { __KT_IMG__?: Record<string, string> }).__KT_IMG__?.[src]) || `${import.meta.env.BASE_URL}${src}`;
