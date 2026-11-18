@@ -74,16 +74,42 @@ export const toGuides = (snap: DbSnapshot): Record<string, SpotGuide> =>
   }]));
 
 // ---- 짐 싸기 ----
+const OUTBOX = 'keeptrip_packing_outbox';
+const readOutbox = (): Record<string, boolean> => { try { return JSON.parse(localStorage.getItem(OUTBOX) || '{}'); } catch { return {}; } };
+const writeOutbox = (o: Record<string, boolean>) => { try { localStorage.setItem(OUTBOX, JSON.stringify(o)); } catch { /* 저장 불가 */ } };
+const patchChecked = (id: number, checked: boolean) =>
+  rest<PackingItemRow[]>(`packing_items?id=eq.${id}`, { method: 'PATCH', body: JSON.stringify({ checked }) });
+
+/** 오프라인 동안 쌓인 체크를 서버로 전송 */
+export const flushPackingOutbox = async () => {
+  const o = readOutbox();
+  for (const [id, checked] of Object.entries(o)) {
+    try { await patchChecked(Number(id), checked); const cur = readOutbox(); if (cur[id] === checked) { delete cur[id]; writeOutbox(cur); } }
+    catch { return; }
+  }
+};
+
 export const fetchPacking = async (tripId: string) => {
   const groups = await rest<PackingGroupRow[]>(`packing_groups?select=*&trip_id=eq.${encodeURIComponent(tripId)}&order=position,id`);
   const ids = groups.map((g) => g.id).join(',');
-  const items = ids ? await rest<PackingItemRow[]>(`packing_items?select=*&group_id=in.(${ids})&order=position,id`) : [];
+  const raw = ids ? await rest<PackingItemRow[]>(`packing_items?select=*&group_id=in.(${ids})&order=position,id`) : [];
+  const o = readOutbox();
+  const items = raw.map((i) => (String(i.id) in o ? { ...i, checked: o[String(i.id)] } : i));
   return { groups, items };
 };
 export const addPackingItem = (groupId: number, title: string) =>
   rest<PackingItemRow[]>('packing_items', { method: 'POST', body: JSON.stringify({ group_id: groupId, title, is_custom: true, position: 1000 }) }).then((r) => r[0]);
-export const setPackingChecked = (id: number, checked: boolean) =>
-  rest<PackingItemRow[]>(`packing_items?id=eq.${id}`, { method: 'PATCH', body: JSON.stringify({ checked }) });
+export const setPackingChecked = async (id: number, checked: boolean) => {
+  try {
+    const r = await patchChecked(id, checked);
+    const o = readOutbox(); if (String(id) in o) { delete o[String(id)]; writeOutbox(o); }
+    return r;
+  } catch (e) {
+    // 네트워크 없음(TypeError) → 기기에 저장해 두고 연결되면 전송
+    if (e instanceof TypeError || !navigator.onLine) { writeOutbox({ ...readOutbox(), [String(id)]: checked }); return []; }
+    throw e;
+  }
+};
 export const deletePackingItem = (id: number) => rest(`packing_items?id=eq.${id}&is_custom=eq.true`, { method: 'DELETE' });
 export const addPackingGroup = (tripId: string, name: string) =>
   rest<PackingGroupRow[]>('packing_groups', { method: 'POST', body: JSON.stringify({ trip_id: tripId, name, is_custom: true, position: 1000 }) }).then((r) => r[0]);

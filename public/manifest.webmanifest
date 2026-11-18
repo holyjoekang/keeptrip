@@ -1,0 +1,29 @@
+{
+  "name": "KeepTrip · 중국 여행 일정",
+  "short_name": "KeepTrip",
+  "description": "인터넷 없이도 열리는 여행 일정·장소 안내·짐 싸기",
+  "start_url": "./#trip=trip-china-2026",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F4F6F8",
+  "theme_color": "#1E2856",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

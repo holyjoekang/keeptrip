@@ -28,6 +28,8 @@ jobs:
         env:
           VITE_BASE: /keeptrip/
       # 새로고침 · 직접 링크에도 앱이 열리도록
+      # 오프라인 앱: dist 전체를 미리 저장하는 서비스워커 생성
+      - run: python3 scripts/build_sw.py dist
       - run: cp dist/index.html dist/404.html && touch dist/.nojekyll
       - uses: actions/configure-pages@v5
         with:

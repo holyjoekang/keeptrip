@@ -85,13 +85,13 @@ export const PackingChecklist: React.FC<{ tripId: string }> = ({ tripId }) => {
 
   const total = items.length;
   const checked = items.filter((i) => i.checked).length;
-  const canEdit = online === true;
+  const canEdit = online === true && navigator.onLine;
 
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between text-xs">
         <span className="font-bold text-slate-700">
-          짐 싸기 체크리스트 · {online === false ? '오프라인 (보기만 가능)' : '각 그룹 아래에서 항목을 추가할 수 있어요'}
+          짐 싸기 체크리스트 · {online === false || !navigator.onLine ? '오프라인 · 체크는 기기에 저장, 연결되면 자동 반영' : '각 그룹 아래에서 항목을 추가할 수 있어요'}
         </span>
         <span className="font-black text-[#1E2856] shrink-0 ml-2">{checked} / {total} 챙김</span>
       </div>
@@ -120,7 +120,7 @@ export const PackingChecklist: React.FC<{ tripId: string }> = ({ tripId }) => {
                   <li key={it.id} className="flex items-start gap-1">
                     <button
                       type="button"
-                      onClick={() => canEdit && toggle(it)}
+                      onClick={() => toggle(it)}
                       className="flex-1 min-w-0 flex items-start gap-2.5 text-left py-1.5 px-1 rounded-lg hover:bg-slate-50"
                     >
                       <span className={`w-5 h-5 rounded-md mt-0.5 flex items-center justify-center shrink-0 ${it.checked ? 'bg-[#27AE60] text-white' : 'border-2 border-slate-300 bg-white'}`}>
